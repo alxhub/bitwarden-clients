@@ -216,6 +216,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libs/angular/tsconfig.json"
+          },
           "defaultConfiguration": "production"
         }
       }

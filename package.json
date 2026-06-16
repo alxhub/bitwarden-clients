@@ -19,6 +19,7 @@
     "lint:clear": "rimraf .eslintcache",
     "prettier": "prettier --cache --write .",
     "test": "jest",
+    "test:hybrid": "bash run-tests-hybrid.sh",
     "test:watch": "jest --clearCache && jest --watch",
     "test:watch:all": "jest --watchAll",
     "test:types": "node ./scripts/test-types.js",
