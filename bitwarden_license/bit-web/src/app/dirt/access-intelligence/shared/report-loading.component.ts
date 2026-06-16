@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ReportProgress } from "@bitwarden/bit-common/dirt/reports/risk-insights";
@@ -19,6 +19,7 @@ const ProgressStepConfig = Object.freeze({
 @Component({
   selector: "dirt-report-loading",
   imports: [JslibModule, ProgressBarComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./report-loading.component.html",
 })
 export class ReportLoadingComponent {

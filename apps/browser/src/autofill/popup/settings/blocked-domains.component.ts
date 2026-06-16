@@ -6,6 +6,7 @@ import {
   OnDestroy,
   AfterViewInit,
   ViewChildren,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import {
   FormsModule,
@@ -46,6 +47,7 @@ import { PopupRouterCacheService } from "../../../platform/popup/view-cache/popu
 @Component({
   selector: "app-blocked-domains",
   templateUrl: "blocked-domains.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CardComponent,

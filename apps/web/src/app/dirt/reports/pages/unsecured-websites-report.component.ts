@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { CollectionService } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -24,6 +24,7 @@ import { CipherReportComponent } from "./cipher-report.component";
 @Component({
   selector: "app-unsecured-websites-report",
   templateUrl: "unsecured-websites-report.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class UnsecuredWebsitesReportComponent extends CipherReportComponent implements OnInit {

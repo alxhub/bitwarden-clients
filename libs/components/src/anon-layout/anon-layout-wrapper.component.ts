@@ -1,4 +1,11 @@
-import { ChangeDetectorRef, Component, DestroyRef, inject, OnInit } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, Data, NavigationEnd, Router, RouterModule } from "@angular/router";
 import { Subject, filter, of, switchMap, tap } from "rxjs";
@@ -50,6 +57,7 @@ export interface AnonLayoutWrapperData {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "anon-layout-wrapper.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AnonLayoutComponent, RouterModule],
 })
 export class AnonLayoutWrapperComponent implements OnInit {

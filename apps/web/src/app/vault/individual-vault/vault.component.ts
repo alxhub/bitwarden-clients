@@ -1,4 +1,12 @@
-import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit, viewChild } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  viewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, NavigationExtras, Params, Router } from "@angular/router";
 import { combineLatest, firstValueFrom, lastValueFrom, Observable, of, Subject } from "rxjs";
@@ -165,6 +173,7 @@ type EmptyStateMap = Record<EmptyStateType, EmptyStateItem>;
     SharedModule,
     VaultBatchActionComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     RoutedVaultFilterService,
     RoutedVaultFilterBridgeService,

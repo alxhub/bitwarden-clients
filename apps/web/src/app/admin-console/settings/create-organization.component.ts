@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 import { first } from "rxjs/operators";
@@ -15,6 +15,7 @@ import { SharedModule } from "../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "create-organization.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, OrganizationPlansComponent, HeaderModule],
 })
 export class CreateOrganizationComponent implements OnInit, OnDestroy {

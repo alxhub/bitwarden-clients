@@ -79,12 +79,12 @@
     }
     @if (isEmpty && !performingInitialLoad) {
       <div class="tw-mt-6 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-start tw-flex-1">
-        <bit-no-items [icon]="(emptyState$ | async)?.icon">
+        <bit-no-items [icon]="$safeNavigationMigration((emptyState$ | async)?.icon)">
           <div slot="title">
-            {{ (emptyState$ | async)?.title | i18n }}
+            {{ $safeNavigationMigration((emptyState$ | async)?.title) | i18n }}
           </div>
           <p slot="description" bitTypography="body2" class="tw-max-w-md tw-text-center">
-            {{ (emptyState$ | async)?.description | i18n }}
+            {{ $safeNavigationMigration((emptyState$ | async)?.description) | i18n }}
           </p>
           @if (showAddCipherBtn) {
             <button

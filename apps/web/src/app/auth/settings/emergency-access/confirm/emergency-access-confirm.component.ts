@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { OrganizationManagementPreferencesService } from "@bitwarden/common/admin-console/abstractions/organization-management-preferences/organization-management-preferences.service";
@@ -29,6 +29,7 @@ type EmergencyAccessConfirmDialogData = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "emergency-access-confirm.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class EmergencyAccessConfirmComponent implements OnInit {

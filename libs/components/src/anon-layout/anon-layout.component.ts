@@ -7,6 +7,7 @@ import {
   SimpleChanges,
   input,
   model,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -27,6 +28,7 @@ import { TypographyModule } from "../typography";
 @Component({
   selector: "auth-anon-layout",
   templateUrl: "./anon-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, I18nPipe, SvgModule, TypographyModule, RouterModule, LandingLayoutModule],
 })
 export class AnonLayoutComponent implements OnInit, OnChanges {

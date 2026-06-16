@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { booleanAttribute, Component, Input } from "@angular/core";
+import { booleanAttribute, Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { FormFieldModule } from "@bitwarden/components";
 
@@ -30,6 +30,7 @@ import { SharedModule } from "../../../shared";
       </bit-label>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FormFieldModule, SharedModule],
 })
 export class PaymentLabelComponent {

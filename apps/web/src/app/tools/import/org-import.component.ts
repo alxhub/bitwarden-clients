@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, map } from "rxjs";
 
@@ -32,6 +32,7 @@ import { ImportCollectionAdminService } from "./import-collection-admin.service"
 @Component({
   templateUrl: "org-import.component.html",
   imports: [SharedModule, ImportComponent, HeaderModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     ...ImporterProviders,
     safeProvider({

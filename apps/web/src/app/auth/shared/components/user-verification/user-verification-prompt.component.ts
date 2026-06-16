@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import {
@@ -25,6 +25,7 @@ import {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "user-verification-prompt.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class UserVerificationPromptComponent extends BaseUserVerificationPrompt {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import {
   BehaviorSubject,
@@ -63,6 +63,7 @@ const BANK_ACCOUNT_VERIFIED_COMMAND = new CommandDefinition<{ organizationId: st
 @Component({
   templateUrl: "./organization-payment-details.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DisplayAccountCreditComponent,
     DisplayBillingAddressComponent,

@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -22,6 +22,7 @@ export type AdvancedUriOptionDialogParams = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "advanced-uri-option-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [LinkComponent, ButtonModule, DialogModule, JslibModule],
 })
 export class AdvancedUriOptionDialogComponent {

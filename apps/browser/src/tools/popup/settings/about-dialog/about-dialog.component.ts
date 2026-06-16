@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, combineLatest, defer, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -20,6 +20,7 @@ import {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "about-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, DialogModule, ButtonModule, TypographyModule],
 })
 export class AboutDialogComponent {

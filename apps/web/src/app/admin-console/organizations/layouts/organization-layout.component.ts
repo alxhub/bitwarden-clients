@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { combineLatest, filter, map, Observable, switchMap, withLatestFrom } from "rxjs";
 
@@ -41,6 +41,7 @@ import { WebLayoutModule } from "../../../layouts/web-layout.module";
 @Component({
   selector: "app-organization-layout",
   templateUrl: "organization-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     RouterModule,

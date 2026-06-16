@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 import {
   concatMap,
@@ -38,6 +38,7 @@ import {
 @Component({
   selector: "app-org-manage-domain-verification",
   templateUrl: "domain-verification.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class DomainVerificationComponent implements OnInit, OnDestroy {

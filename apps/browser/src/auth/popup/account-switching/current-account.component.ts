@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule, Location } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { Observable, combineLatest, switchMap } from "rxjs";
 
@@ -26,6 +26,7 @@ export type CurrentAccount = {
 @Component({
   selector: "app-current-account",
   templateUrl: "current-account.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, AvatarModule, RouterModule],
 })
 export class CurrentAccountComponent {

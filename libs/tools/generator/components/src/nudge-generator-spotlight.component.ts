@@ -1,5 +1,5 @@
 import { AsyncPipe, CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom, Observable, switchMap } from "rxjs";
 
 import { NudgesService, NudgeType } from "@bitwarden/angular/vault";
@@ -14,6 +14,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "nudge-generator-spotlight",
   templateUrl: "nudge-generator-spotlight.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [I18nPipe, CalloutModule, AsyncPipe, CommonModule, TypographyModule],
 })
 export class NudgeGeneratorSpotlightComponent {

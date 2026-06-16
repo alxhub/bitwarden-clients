@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { TypographyModule } from "@bitwarden/components";
 import { I18nPipe } from "@bitwarden/ui-common";
@@ -14,6 +14,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "app-danger-zone",
   templateUrl: "danger-zone.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, TypographyModule, I18nPipe],
 })
 export class DangerZoneComponent {}

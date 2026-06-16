@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { firstValueFrom, Observable } from "rxjs";
 
@@ -17,6 +17,7 @@ import { KdfConfig, KdfType } from "@bitwarden/key-management";
 @Component({
   selector: "app-change-kdf-confirmation",
   templateUrl: "change-kdf-confirmation.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ChangeKdfConfirmationComponent {

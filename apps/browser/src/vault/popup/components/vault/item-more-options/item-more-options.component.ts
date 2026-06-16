@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { booleanAttribute, Component, input, Input } from "@angular/core";
+import { booleanAttribute, Component, input, Input, ChangeDetectionStrategy } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { BehaviorSubject, combineLatest, firstValueFrom, map, Observable, switchMap } from "rxjs";
 import { filter } from "rxjs/operators";
@@ -56,6 +56,7 @@ import {
     PremiumBadgeComponent,
     IconModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: PremiumUpgradePromptService, useClass: BrowserPremiumUpgradePromptService },
   ],

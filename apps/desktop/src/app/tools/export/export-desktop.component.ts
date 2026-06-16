@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, signal } from "@angular/core";
+import { Component, signal, ChangeDetectionStrategy } from "@angular/core";
 
 import { DialogRef, AsyncActionsModule, ButtonModule, DialogModule } from "@bitwarden/components";
 import { I18nPipe } from "@bitwarden/ui-common";
@@ -9,6 +9,7 @@ import { ExportComponent } from "@bitwarden/vault-export-ui";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "export-desktop.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     I18nPipe,

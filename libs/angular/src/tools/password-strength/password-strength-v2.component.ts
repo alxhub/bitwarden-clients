@@ -9,6 +9,7 @@ import {
   OnChanges,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -30,6 +31,7 @@ type BackgroundTypes = "danger" | "primary" | "success" | "warning";
 @Component({
   selector: "tools-password-strength",
   templateUrl: "password-strength-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, ProgressBarComponent, FormFieldModule],
 })
 export class PasswordStrengthV2Component implements OnChanges {

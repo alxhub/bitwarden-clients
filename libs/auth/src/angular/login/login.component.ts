@@ -7,6 +7,7 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from "@angular/forms";
@@ -74,6 +75,7 @@ export enum LoginUiState {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./login.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

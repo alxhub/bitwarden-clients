@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Output, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -19,6 +19,7 @@ import { AbstractSelfHostingLicenseUploaderComponent } from "../../shared/self-h
 @Component({
   selector: "individual-self-hosting-license-uploader",
   templateUrl: "./self-hosting-license-uploader.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class IndividualSelfHostingLicenseUploaderComponent extends AbstractSelfHostingLicenseUploaderComponent {

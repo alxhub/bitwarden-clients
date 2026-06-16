@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
@@ -15,6 +15,7 @@ import { CalloutModule } from "@bitwarden/components";
 @Component({
   selector: "auth-password-callout",
   templateUrl: "password-callout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, CalloutModule],
 })
 export class PasswordCalloutComponent {

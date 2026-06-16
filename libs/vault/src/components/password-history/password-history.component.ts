@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Inject, Component } from "@angular/core";
+import { Inject, Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
@@ -31,6 +31,7 @@ export interface ViewPasswordHistoryDialogParams {
 @Component({
   selector: "app-vault-password-history",
   templateUrl: "password-history.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CommonModule,

@@ -10,6 +10,7 @@ import {
   PipeTransform,
   Pipe,
   inject,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import {
@@ -119,6 +120,7 @@ export class AuthTypeNamePipe implements PipeTransform {
   selector: "tools-send-details",
   templateUrl: "./send-details.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     SectionComponent,
     SectionHeaderComponent,

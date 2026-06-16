@@ -12,6 +12,7 @@ import {
   Output,
   ViewChild,
   Optional,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ReactiveFormsModule, UntypedFormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -81,6 +82,7 @@ import { ExportScopeDescriptionComponent } from "./export-scope-description.comp
 @Component({
   selector: "tools-export",
   templateUrl: "export.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

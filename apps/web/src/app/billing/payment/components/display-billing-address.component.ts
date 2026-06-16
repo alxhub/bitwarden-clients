@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 import { lastValueFrom } from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
@@ -47,6 +47,7 @@ import { SharedModule } from "@bitwarden/web-vault/app/shared";
     </bit-section>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AddressPipe, SharedModule],
 })
 export class DisplayBillingAddressComponent {

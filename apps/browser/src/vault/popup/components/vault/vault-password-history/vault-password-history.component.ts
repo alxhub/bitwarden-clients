@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 import { first, map } from "rxjs/operators";
@@ -22,6 +22,7 @@ import { PopupRouterCacheService } from "../../../../../platform/popup/view-cach
 @Component({
   selector: "vault-password-history",
   templateUrl: "vault-password-history.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
     PopupPageComponent,

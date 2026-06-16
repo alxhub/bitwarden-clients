@@ -7,6 +7,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { map, ReplaySubject, skip, Subject, takeUntil, withLatestFrom } from "rxjs";
@@ -27,6 +28,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "tools-subaddress-settings",
   templateUrl: "subaddress-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ReactiveFormsModule, FormFieldModule, JslibModule, I18nPipe],
 })
 export class SubaddressSettingsComponent implements OnInit, OnChanges, OnDestroy {

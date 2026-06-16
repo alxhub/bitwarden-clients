@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnInit, output, computed, signal } from "@angular/core";
+import {
+  Component,
+  inject,
+  OnInit,
+  output,
+  computed,
+  signal,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { firstValueFrom, Subject, takeUntil } from "rxjs";
 
@@ -47,6 +55,7 @@ import { TypeFilterComponent } from "./filters/type-filter.component";
     FolderFilterComponent,
     A11yTitleDirective,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       provide: PremiumUpgradePromptService,

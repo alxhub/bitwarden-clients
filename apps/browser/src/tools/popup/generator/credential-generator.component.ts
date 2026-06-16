@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -15,6 +15,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
 @Component({
   selector: "credential-generator",
   templateUrl: "credential-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     GeneratorModule,
     CurrentAccountComponent,

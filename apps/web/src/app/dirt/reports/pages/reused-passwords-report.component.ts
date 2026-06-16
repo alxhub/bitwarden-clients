@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -25,6 +25,7 @@ import { CipherReportComponent } from "./cipher-report.component";
 @Component({
   selector: "app-reused-passwords-report",
   templateUrl: "reused-passwords-report.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ReusedPasswordsReportComponent extends CipherReportComponent implements OnInit {

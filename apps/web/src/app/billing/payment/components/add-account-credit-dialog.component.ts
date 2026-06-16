@@ -1,5 +1,5 @@
 import { DIALOG_DATA } from "@angular/cdk/dialog";
-import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import {
   AbstractControl,
   FormControl,
@@ -124,6 +124,7 @@ const positiveNumberValidator =
     </form>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class AddAccountCreditDialogComponent {

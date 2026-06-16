@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, OnInit } from "@angular/core";
+import { Component, DestroyRef, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, FormControl, ReactiveFormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -75,6 +75,7 @@ enum State {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./login-decryption-options.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

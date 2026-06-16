@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { DeviceManagementComponent } from "@bitwarden/angular/auth/device-management/device-management.component";
 import { I18nPipe } from "@bitwarden/ui-common";
@@ -13,6 +13,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
   standalone: true,
   selector: "extension-device-management",
   templateUrl: "extension-device-management.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DeviceManagementComponent,
     I18nPipe,

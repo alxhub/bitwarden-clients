@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { combineLatest, map, Observable, switchMap } from "rxjs";
 
@@ -16,6 +16,7 @@ import { DialogService, IconModule, NavigationModule } from "@bitwarden/componen
 @Component({
   selector: "org-switcher",
   templateUrl: "org-switcher.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, NavigationModule, IconModule],
 })
 export class OrgSwitcherComponent {

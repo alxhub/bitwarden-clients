@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -35,6 +35,7 @@ import {
     IconButtonModule,
     ReactiveFormsModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "password-reprompt.component.html",
 })
 export class PasswordRepromptComponent {

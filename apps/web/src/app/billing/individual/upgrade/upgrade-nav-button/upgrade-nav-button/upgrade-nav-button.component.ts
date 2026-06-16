@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom, lastValueFrom } from "rxjs";
 
@@ -20,6 +20,7 @@ import {
   selector: "app-upgrade-nav-button",
   imports: [I18nPipe],
   templateUrl: "./upgrade-nav-button.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class UpgradeNavButtonComponent {

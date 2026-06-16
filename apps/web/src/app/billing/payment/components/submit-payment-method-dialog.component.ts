@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogRef, ToastService } from "@bitwarden/components";
@@ -16,7 +16,7 @@ export type SubmitPaymentMethodDialogResult =
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
-@Component({ template: "" })
+@Component({ changeDetection: ChangeDetectionStrategy.Eager, template: "" })
 export abstract class SubmitPaymentMethodDialogComponent {
   // FIXME(https://bitwarden.atlassian.net/browse/CL-903): Migrate to Signals
   // eslint-disable-next-line @angular-eslint/prefer-signals

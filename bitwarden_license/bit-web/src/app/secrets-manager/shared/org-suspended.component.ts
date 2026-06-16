@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { map, concatMap, firstValueFrom } from "rxjs";
 
@@ -14,6 +14,7 @@ import { getUserId } from "@bitwarden/common/auth/services/account.service";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./org-suspended.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OrgSuspendedComponent {

@@ -1,7 +1,16 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, input, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  input,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   AsyncValidatorFn,
   ControlContainer,
@@ -52,6 +61,7 @@ type LoginImportResult = {
   selector: "import-chrome",
   templateUrl: "import-chrome.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

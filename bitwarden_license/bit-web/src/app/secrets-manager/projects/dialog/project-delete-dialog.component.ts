@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   FormControl,
   FormGroup,
@@ -29,6 +29,7 @@ export interface ProjectDeleteOperation {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./project-delete-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProjectDeleteDialogComponent implements OnInit {

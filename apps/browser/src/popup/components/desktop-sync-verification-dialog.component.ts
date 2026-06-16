@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { filter, Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -20,6 +20,7 @@ export type DesktopSyncVerificationDialogParams = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "desktop-sync-verification-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [JslibModule, ButtonModule, DialogModule],
 })
 export class DesktopSyncVerificationDialogComponent implements OnDestroy, OnInit {

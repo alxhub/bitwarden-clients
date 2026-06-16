@@ -1,5 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
@@ -42,6 +50,7 @@ import {
     AsyncActionsModule,
     FormsModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [],
 })
 export class TwoFactorAuthDuoComponent implements OnInit {

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { BehaviorSubject, Observable, Subject, firstValueFrom, of } from "rxjs";
@@ -77,6 +77,7 @@ import { NativeMessagingManifestService } from "../services/native-messaging-man
       useClass: DesktopPremiumUpgradePromptService,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CheckboxModule,
     CommonModule,

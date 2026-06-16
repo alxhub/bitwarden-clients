@@ -1,5 +1,5 @@
 import { formatDate } from "@angular/common";
-import { Component, OnInit, signal } from "@angular/core";
+import { Component, OnInit, signal, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom, map, Observable, switchMap } from "rxjs";
@@ -39,6 +39,7 @@ import { AddSponsorshipDialogComponent } from "./add-sponsorship-dialog.componen
 @Component({
   selector: "app-free-bitwarden-families",
   templateUrl: "free-bitwarden-families.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     ContainerComponent,

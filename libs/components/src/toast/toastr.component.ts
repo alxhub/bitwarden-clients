@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Toast as BaseToastrComponent, ToastPackage, ToastrService } from "ngx-toastr";
 
 import { ToastComponent } from "./toast.component";
@@ -12,9 +12,9 @@ import { ToastComponent } from "./toast.component";
 @Component({
   template: `
     <bit-toast
-      [title]="options?.payload?.title"
-      [variant]="options?.payload?.variant"
-      [message]="options?.payload?.message"
+      [title]="options().payload?.title"
+      [variant]="options().payload?.variant"
+      [message]="options().payload?.message"
       [progressWidth]="width()"
       (onClose)="remove()"
     ></bit-toast>
@@ -28,6 +28,7 @@ import { ToastComponent } from "./toast.component";
       transition("active => removed", animate("{{ easeTime }}ms {{ easing }}")),
     ]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ToastComponent],
 })
 export class BitwardenToastrComponent extends BaseToastrComponent {

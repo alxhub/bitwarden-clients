@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -15,6 +15,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "accept-organization.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IconModule, I18nPipe],
 })
 export class AcceptOrganizationComponent implements OnInit {

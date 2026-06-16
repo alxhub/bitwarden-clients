@@ -1,6 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, forwardRef, Input, OnDestroy, OnInit } from "@angular/core";
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   ControlValueAccessor,
   FormBuilder,
@@ -32,6 +39,7 @@ import { ApPermissionEnum } from "./models/enums/ap-permission.enum";
       multi: true,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AccessPolicySelectorComponent implements ControlValueAccessor, OnInit, OnDestroy {

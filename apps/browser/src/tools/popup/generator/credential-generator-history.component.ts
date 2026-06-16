@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnChanges, SimpleChanges, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { ReplaySubject, Subject, firstValueFrom, map, switchMap, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -30,6 +38,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
 @Component({
   selector: "app-credential-generator-history",
   templateUrl: "credential-generator-history.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CommonModule,

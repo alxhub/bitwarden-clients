@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { SelectionModel } from "@angular/cdk/collections";
-import { Component, EventEmitter, Input, Output, inject } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  inject,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import {
   Observable,
@@ -55,6 +62,7 @@ type ItemPermission = CollectionPermission | "NoAccess";
 @Component({
   selector: "app-vault-items",
   templateUrl: "vault-items.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VaultItemsComponent<C extends CipherViewLike> {

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
 import { firstValueFrom, map, switchMap } from "rxjs";
@@ -28,6 +28,7 @@ import { CipherFormContainer } from "@bitwarden/vault";
 @Component({
   selector: "app-open-attachments",
   templateUrl: "./open-attachments.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, ItemModule, JslibModule, TypographyModule, PremiumBadgeComponent],
 })
 export class OpenAttachmentsComponent implements OnInit {

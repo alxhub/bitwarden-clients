@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Observable } from "rxjs";
 
@@ -28,6 +28,7 @@ const blockedURISettingsRoute = "/blocked-domains";
     TypographyModule,
   ],
   selector: "blocked-injection-banner",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "blocked-injection-banner.component.html",
 })
 // FIXME(https://bitwarden.atlassian.net/browse/PM-28231): Use Component suffix

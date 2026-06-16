@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
@@ -74,6 +74,7 @@ interface ViewData {
 @Component({
   selector: "app-fido2",
   templateUrl: "fido2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CommonModule,

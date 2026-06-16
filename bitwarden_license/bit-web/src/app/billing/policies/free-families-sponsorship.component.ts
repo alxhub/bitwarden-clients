@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import {
@@ -21,6 +21,7 @@ export class FreeFamiliesSponsorshipPolicy extends BasePolicyEditDefinition {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "free-families-sponsorship.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class FreeFamiliesSponsorshipPolicyComponent extends BasePolicyEditComponent {}

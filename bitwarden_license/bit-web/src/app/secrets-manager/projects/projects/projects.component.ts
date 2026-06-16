@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   combineLatest,
@@ -45,6 +45,7 @@ import { ProjectService } from "../project.service";
 @Component({
   selector: "sm-projects",
   templateUrl: "./projects.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProjectsComponent implements OnInit {

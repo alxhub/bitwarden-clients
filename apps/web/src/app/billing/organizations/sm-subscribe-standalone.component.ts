@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -25,6 +25,7 @@ import { secretsManagerSubscribeFormFactory } from "../shared";
 @Component({
   selector: "sm-subscribe-standalone",
   templateUrl: "sm-subscribe-standalone.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SecretsManagerSubscribeStandaloneComponent {

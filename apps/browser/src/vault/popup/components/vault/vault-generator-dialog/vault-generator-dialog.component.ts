@@ -2,7 +2,7 @@
 // @ts-strict-ignore
 import { Overlay } from "@angular/cdk/overlay";
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { UnionOfValues } from "@bitwarden/common/vault/types/union-of-values";
@@ -43,6 +43,7 @@ type GeneratorDialogAction = UnionOfValues<typeof GeneratorDialogAction>;
 @Component({
   selector: "app-vault-generator-dialog",
   templateUrl: "./vault-generator-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,

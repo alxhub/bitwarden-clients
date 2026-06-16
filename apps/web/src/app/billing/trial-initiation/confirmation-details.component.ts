@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { ProductType } from "@bitwarden/common/billing/enums";
 
@@ -9,6 +9,7 @@ import { ProductType } from "@bitwarden/common/billing/enums";
 @Component({
   selector: "app-trial-confirmation-details",
   templateUrl: "confirmation-details.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ConfirmationDetailsComponent {

@@ -7,6 +7,7 @@ import {
   output,
   signal,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { FormBuilder, Validators } from "@angular/forms";
@@ -91,6 +92,7 @@ const Allowed2020PlansForLegacyProviders = [
 @Component({
   selector: "app-organization-plans",
   templateUrl: "organization-plans.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     BillingSharedModule,
     OrganizationCreateModule,

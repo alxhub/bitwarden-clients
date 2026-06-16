@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { UserVerificationFormInputComponent } from "@bitwarden/auth/angular";
@@ -16,6 +16,7 @@ import { SharedModule } from "../../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "deauthorize-sessions.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, UserVerificationFormInputComponent],
 })
 export class DeauthorizeSessionsComponent {

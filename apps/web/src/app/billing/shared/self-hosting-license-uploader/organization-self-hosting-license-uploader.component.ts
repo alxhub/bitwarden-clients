@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Output, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -29,6 +29,7 @@ import { AbstractSelfHostingLicenseUploaderComponent } from "../../shared/self-h
 @Component({
   selector: "organization-self-hosting-license-uploader",
   templateUrl: "./self-hosting-license-uploader.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OrganizationSelfHostingLicenseUploaderComponent extends AbstractSelfHostingLicenseUploaderComponent {

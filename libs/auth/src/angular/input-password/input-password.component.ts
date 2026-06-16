@@ -8,6 +8,7 @@ import {
   OnInit,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ReactiveFormsModule, FormBuilder, Validators, FormControl } from "@angular/forms";
@@ -107,6 +108,7 @@ interface InputPasswordForm {
 @Component({
   selector: "auth-input-password",
   templateUrl: "./input-password.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     AsyncActionsModule,

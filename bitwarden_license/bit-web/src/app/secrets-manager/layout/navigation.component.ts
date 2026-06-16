@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import {
   combineLatest,
@@ -35,6 +35,7 @@ import { CountService } from "../shared/counts/count.service";
 @Component({
   selector: "sm-navigation",
   templateUrl: "./navigation.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class NavigationComponent implements OnInit, OnDestroy {

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ConfirmKeyConnectorDomainComponent as BaseConfirmKeyConnectorDomainComponent } from "@bitwarden/key-management-ui";
 import { RouterService } from "@bitwarden/web-vault/app/core";
@@ -9,6 +9,7 @@ import { RouterService } from "@bitwarden/web-vault/app/core";
   selector: "app-confirm-key-connector-domain",
   template: ` <confirm-key-connector-domain [onBeforeNavigation]="onBeforeNavigation" /> `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BaseConfirmKeyConnectorDomainComponent],
 })
 export class ConfirmKeyConnectorDomainComponent {

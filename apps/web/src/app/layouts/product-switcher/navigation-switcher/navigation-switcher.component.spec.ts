@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { ActivatedRoute, RouterModule } from "@angular/router";
@@ -23,6 +23,7 @@ import { NavigationProductSwitcherComponent } from "./navigation-switcher.compon
 @Component({
   selector: "app-upgrade-nav-button",
   template: "<div>Upgrade Nav Button</div>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 class MockUpgradeNavButtonComponent {}

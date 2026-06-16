@@ -1,4 +1,4 @@
-import { Component, inject, signal } from "@angular/core";
+import { Component, inject, signal, ChangeDetectionStrategy } from "@angular/core";
 
 import { UnionOfValues } from "@bitwarden/common/vault/types/union-of-values";
 import {
@@ -23,6 +23,7 @@ type AtRiskCarouselDialogResult = UnionOfValues<typeof AtRiskCarouselDialogResul
 @Component({
   selector: "vault-at-risk-carousel-dialog",
   templateUrl: "./at-risk-carousel-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DialogModule,
     VaultCarouselModule,

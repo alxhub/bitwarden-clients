@@ -57,14 +57,17 @@
     </ng-container>
     <ng-container bitDialogContent>
       <div bitTypography="body1" class="tw-mb-2">
-        {{ "atRiskMembersWithCount" | i18n: drawerDetails.appAtRiskMembers?.members.length }}
+        {{
+          "atRiskMembersWithCount"
+            | i18n: $safeNavigationMigration(drawerDetails.appAtRiskMembers?.members.length)
+        }}
       </div>
       <div bitTypography="body1" class="tw-text-muted tw-text-sm tw-mb-2">
         {{
           (drawerDetails.appAtRiskMembers?.members.length > 0
             ? "atRiskMembersDescriptionWithApp"
             : "atRiskMembersDescriptionWithAppNone"
-          ) | i18n: drawerDetails.appAtRiskMembers?.applicationName
+          ) | i18n: $safeNavigationMigration(drawerDetails.appAtRiskMembers?.applicationName)
         }}
       </div>
       <div class="tw-mt-1">

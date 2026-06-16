@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { BehaviorSubject, Subject, switchMap, takeUntil, tap } from "rxjs";
 
@@ -45,6 +45,7 @@ import { SharedModule } from "@bitwarden/web-vault/app/shared/shared.module";
       ],
     }),
   ] satisfies SafeProvider[],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, NoItemsModule, HeaderModule, IconModule],
 })
 export class DeviceApprovalsComponent implements OnInit, OnDestroy {

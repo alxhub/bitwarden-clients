@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { firstValueFrom, map } from "rxjs";
 
@@ -13,6 +13,7 @@ import { BreachAccountResponse } from "@bitwarden/common/dirt/models/response/br
 @Component({
   selector: "app-breach-report",
   templateUrl: "breach-report.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BreachReportComponent implements OnInit {

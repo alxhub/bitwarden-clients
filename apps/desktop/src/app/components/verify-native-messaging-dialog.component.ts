@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import {
   DIALOG_DATA,
@@ -17,6 +17,7 @@ export type VerifyNativeMessagingDialogData = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "verify-native-messaging-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [I18nPipe, ButtonModule, DialogModule],
 })
 export class VerifyNativeMessagingDialogComponent {

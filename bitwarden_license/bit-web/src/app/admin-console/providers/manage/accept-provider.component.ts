@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { BitwardenLogo } from "@bitwarden/assets/svg";
@@ -16,6 +16,7 @@ import { BaseAcceptComponent } from "@bitwarden/web-vault/app/common/base.accept
 @Component({
   selector: "app-accept-provider",
   templateUrl: "accept-provider.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AcceptProviderComponent extends BaseAcceptComponent {

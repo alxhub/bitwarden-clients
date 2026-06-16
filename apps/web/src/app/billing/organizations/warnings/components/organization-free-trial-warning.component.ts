@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { Observable } from "rxjs";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -30,6 +37,7 @@ import { OrganizationFreeTrialWarning } from "../types";
       </bit-banner>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BannerModule, SharedModule],
 })
 export class OrganizationFreeTrialWarningComponent implements OnInit {

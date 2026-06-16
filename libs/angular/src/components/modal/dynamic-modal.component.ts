@@ -11,6 +11,7 @@ import {
   Type,
   ViewChild,
   ViewContainerRef,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { ModalRef } from "./modal.ref";
@@ -20,6 +21,7 @@ import { ModalRef } from "./modal.ref";
 @Component({
   selector: "app-modal",
   template: "<ng-template #modalContent></ng-template>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class DynamicModalComponent implements AfterViewInit, OnDestroy {

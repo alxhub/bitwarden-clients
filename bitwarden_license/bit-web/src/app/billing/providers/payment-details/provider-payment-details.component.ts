@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import {
   BehaviorSubject,
@@ -61,6 +61,7 @@ const BANK_ACCOUNT_VERIFIED_COMMAND = new CommandDefinition<{
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./provider-payment-details.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DisplayAccountCreditComponent,
     DisplayBillingAddressComponent,

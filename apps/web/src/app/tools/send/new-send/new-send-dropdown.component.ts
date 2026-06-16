@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom, Observable, of, switchMap, lastValueFrom } from "rxjs";
 
 import { PremiumBadgeComponent } from "@bitwarden/angular/billing/components/premium-badge";
@@ -28,6 +28,7 @@ import { SendSuccessDrawerDialogComponent } from "../shared";
   selector: "tools-new-send-dropdown",
   templateUrl: "new-send-dropdown.component.html",
   imports: [I18nPipe, ButtonModule, MenuModule, PremiumBadgeComponent, IconComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [DefaultSendFormConfigService],
 })
 /**

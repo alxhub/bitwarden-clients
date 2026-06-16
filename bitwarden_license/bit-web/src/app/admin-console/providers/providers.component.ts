@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { map, Observable, switchMap, tap } from "rxjs";
 
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
@@ -15,6 +15,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 @Component({
   selector: "app-providers",
   templateUrl: "providers.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProvidersComponent implements OnInit {

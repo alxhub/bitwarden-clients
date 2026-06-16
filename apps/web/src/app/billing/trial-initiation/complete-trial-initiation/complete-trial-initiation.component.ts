@@ -1,5 +1,5 @@
 import { StepperSelectionEvent } from "@angular/cdk/stepper";
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, Subject, takeUntil } from "rxjs";
@@ -38,6 +38,7 @@ export type InitiationPath =
 @Component({
   selector: "app-complete-trial-initiation",
   templateUrl: "complete-trial-initiation.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {

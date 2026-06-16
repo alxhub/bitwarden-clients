@@ -7,6 +7,7 @@ import {
   Output,
   OnChanges,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { Observable, map, tap } from "rxjs";
 
@@ -20,6 +21,7 @@ import { TypographyModule } from "@bitwarden/components";
 @Component({
   selector: "[bitTotpCountdown]",
   templateUrl: "totp-countdown.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, TypographyModule],
 })
 export class BitTotpCountdownComponent implements OnInit, OnChanges {

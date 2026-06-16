@@ -1,5 +1,5 @@
 import { CdkStep } from "@angular/cdk/stepper";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -7,6 +7,7 @@ import { Component, Input } from "@angular/core";
   selector: "app-vertical-step",
   templateUrl: "vertical-step.component.html",
   providers: [{ provide: CdkStep, useExisting: VerticalStep }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 // FIXME(https://bitwarden.atlassian.net/browse/PM-28231): Use Component suffix

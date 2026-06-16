@@ -1,6 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, DestroyRef, NgZone, OnDestroy, OnInit } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
 import { Subject, filter, firstValueFrom, map, timeout } from "rxjs";
@@ -35,6 +42,7 @@ const IdleTimeout = 60000 * 10; // 10 minutes
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppComponent implements OnDestroy, OnInit {

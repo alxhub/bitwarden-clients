@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, ElementRef, HostBinding, input, Optional } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  input,
+  Optional,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { FormControlComponent } from "./form-control.component";
 
@@ -12,6 +19,7 @@ let nextId = 0;
   selector: "bit-label",
   templateUrl: "label.component.html",
   imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     "[class]": "classList",
     "[id]": "id()",

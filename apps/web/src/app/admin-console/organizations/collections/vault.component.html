@@ -24,8 +24,14 @@
       [searchText]="currentSearchText$ | async"
       (addCipher)="addCipher($event)"
       (addCollection)="addCollection()"
-      (editCollection)="editCollection(selectedCollection?.node, $event.tab, $event.readonly)"
-      (deleteCollection)="deleteCollection(selectedCollection?.node)"
+      (editCollection)="
+        editCollection(
+          $safeNavigationMigration(selectedCollection?.node),
+          $event.tab,
+          $event.readonly
+        )
+      "
+      (deleteCollection)="deleteCollection($safeNavigationMigration(selectedCollection?.node))"
       (searchTextChanged)="filterSearchText($event)"
       (openAddItemDialogEvent)="openAddItemDialog()"
     ></app-org-vault-header>
@@ -90,10 +96,10 @@
             ((filter.type === undefined && filter.collectionId === undefined) ||
               filter.collectionId !== undefined)
           "
-          [showPremiumFeatures]="organization?.useTotp"
+          [showPremiumFeatures]="$safeNavigationMigration(organization?.useTotp)"
           [showBulkMove]="false"
           [showBulkTrashOptions]="filter.type === 'trash'"
-          [useEvents]="organization?.canAccessEventLogs"
+          [useEvents]="$safeNavigationMigration(organization?.canAccessEventLogs)"
           [showAdminActions]="true"
           (onEvent)="onVaultItemsEvent($event)"
           [showBulkEditCollectionAccess]="true"
@@ -101,7 +107,7 @@
           [viewingOrgVault]="true"
           [addAccessStatus]="addAccessStatus$ | async"
           [addAccessToggle]="showAddAccessToggle"
-          [activeCollection]="selectedCollection?.node"
+          [activeCollection]="$safeNavigationMigration(selectedCollection?.node)"
         >
         </app-vault-items>
       }
@@ -132,10 +138,20 @@
           </bit-no-items>
         } @else {
           <collection-access-restricted
-            [canEditCollection]="selectedCollection?.node?.canEdit(organization)"
-            [canViewCollectionInfo]="selectedCollection?.node?.canViewCollectionInfo(organization)"
+            [canEditCollection]="
+              $safeNavigationMigration(selectedCollection?.node?.canEdit(organization))
+            "
+            [canViewCollectionInfo]="
+              $safeNavigationMigration(
+                selectedCollection?.node?.canViewCollectionInfo(organization)
+              )
+            "
             (viewCollectionClicked)="
-              editCollection(selectedCollection?.node, $event.tab, $event.readonly)
+              editCollection(
+                $safeNavigationMigration(selectedCollection?.node),
+                $event.tab,
+                $event.readonly
+              )
             "
           >
           </collection-access-restricted>

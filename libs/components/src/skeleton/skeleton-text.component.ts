@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, computed, input } from "@angular/core";
+import { Component, computed, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { SkeletonComponent } from "./skeleton.component";
 
@@ -16,6 +16,7 @@ import { SkeletonComponent } from "./skeleton.component";
   selector: "bit-skeleton-text",
   templateUrl: "./skeleton-text.component.html",
   imports: [CommonModule, SkeletonComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: "tw-block",
   },

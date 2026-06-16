@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormControl } from "@angular/forms";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -25,6 +25,7 @@ export class AutomaticAppLoginPolicy extends BasePolicyEditDefinition {
 @Component({
   selector: "automatic-app-login-policy-edit",
   templateUrl: "automatic-app-login.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class AutomaticAppLoginPolicyComponent extends BasePolicyEditComponent {

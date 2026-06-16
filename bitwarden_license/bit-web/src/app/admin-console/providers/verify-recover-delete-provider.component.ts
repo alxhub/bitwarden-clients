@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit, SecurityContext } from "@angular/core";
+import { Component, OnInit, SecurityContext, ChangeDetectionStrategy } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -15,6 +15,7 @@ import { ToastService } from "@bitwarden/components";
 @Component({
   selector: "app-verify-recover-delete-provider",
   templateUrl: "verify-recover-delete-provider.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VerifyRecoverDeleteProviderComponent implements OnInit {

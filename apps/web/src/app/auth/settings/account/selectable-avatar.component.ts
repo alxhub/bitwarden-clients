@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { NgClass } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 
 import { AvatarModule } from "@bitwarden/components";
 
@@ -27,6 +27,7 @@ import { AvatarModule } from "@bitwarden/components";
     >
     </bit-avatar>
   </span>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NgClass, AvatarModule],
 })
 export class SelectableAvatarComponent {

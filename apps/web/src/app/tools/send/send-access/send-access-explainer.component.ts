@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { SharedModule } from "../../../shared";
 
@@ -7,6 +7,7 @@ import { SharedModule } from "../../../shared";
 @Component({
   selector: "app-send-access-explainer",
   templateUrl: "send-access-explainer.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class SendAccessExplainerComponent {

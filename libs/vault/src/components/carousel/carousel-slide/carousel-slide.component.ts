@@ -9,6 +9,7 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
@@ -16,6 +17,7 @@ import {
 @Component({
   selector: "vault-carousel-slide",
   templateUrl: "./carousel-slide.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule],
 })
 export class VaultCarouselSlideComponent implements OnInit {

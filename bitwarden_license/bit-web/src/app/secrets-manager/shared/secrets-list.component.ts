@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { SelectionModel } from "@angular/cdk/collections";
-import { Component, EventEmitter, Input, OnDestroy, Output, OnInit } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { catchError, concatMap, map, Observable, of, Subject, switchMap, takeUntil } from "rxjs";
 
@@ -26,6 +34,7 @@ import { SecretService } from "../secrets/secret.service";
 @Component({
   selector: "sm-secrets-list",
   templateUrl: "./secrets-list.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SecretsListComponent implements OnDestroy, OnInit {

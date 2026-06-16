@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import {
   OrganizationUserApiService,
@@ -24,6 +24,7 @@ type BulkRemoveDialogParams = {
 @Component({
   templateUrl: "bulk-remove-dialog.component.html",
   selector: "member-bulk-remove-dialog",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkRemoveDialogComponent extends BaseBulkRemoveComponent {

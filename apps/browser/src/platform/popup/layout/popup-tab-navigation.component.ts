@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -21,6 +21,7 @@ export type NavButton = {
   selector: "popup-tab-navigation",
   templateUrl: "popup-tab-navigation.component.html",
   imports: [CommonModule, LinkModule, RouterModule, JslibModule, SvgModule, BerryComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: "tw-block tw-size-full tw-flex tw-flex-col",
   },

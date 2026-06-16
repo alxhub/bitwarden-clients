@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { DialogRef, DialogService } from "@bitwarden/components";
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
@@ -7,6 +7,7 @@ import { SharedModule } from "@bitwarden/web-vault/app/shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   imports: [SharedModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./session-timeout-confirmation-never.component.html",
 })
 export class SessionTimeoutConfirmationNeverComponent {

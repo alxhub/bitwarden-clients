@@ -1,4 +1,12 @@
-import { Component, DestroyRef, inject, OnDestroy, OnInit, DOCUMENT } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  DOCUMENT,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router, RouterModule } from "@angular/router";
 import { firstValueFrom, pairwise, startWith } from "rxjs";
@@ -46,6 +54,7 @@ type SetupExtensionState = UnionOfValues<typeof SetupExtensionState>;
 @Component({
   selector: "vault-setup-extension",
   templateUrl: "./setup-extension.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
     ButtonComponent,

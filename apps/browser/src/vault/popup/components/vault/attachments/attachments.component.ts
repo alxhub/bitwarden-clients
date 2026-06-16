@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
@@ -22,6 +22,7 @@ import { PopupRouterCacheService } from "../../../../../platform/popup/view-cach
 @Component({
   selector: "app-attachments",
   templateUrl: "./attachments.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ButtonModule,

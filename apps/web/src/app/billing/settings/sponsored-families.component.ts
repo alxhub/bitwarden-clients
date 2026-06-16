@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
@@ -54,6 +54,7 @@ interface RequestSponsorshipForm {
 @Component({
   selector: "app-sponsored-families",
   templateUrl: "sponsored-families.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
 

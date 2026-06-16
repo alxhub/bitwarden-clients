@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Data, NavigationEnd, Router, RouterModule } from "@angular/router";
 import { Subject, filter, switchMap, takeUntil, tap } from "rxjs";
 
@@ -33,6 +33,7 @@ export interface ExtensionAnonLayoutWrapperData extends AnonLayoutWrapperData {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "extension-anon-layout-wrapper.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AnonLayoutComponent,
     CommonModule,

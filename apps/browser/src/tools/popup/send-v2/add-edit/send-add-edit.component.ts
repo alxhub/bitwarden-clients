@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule, Location } from "@angular/common";
-import { Component, inject, signal, viewChild } from "@angular/core";
+import { Component, inject, signal, viewChild, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from "@angular/router";
@@ -81,6 +81,7 @@ export type AddEditQueryParams = Partial<Record<keyof QueryParams, string>>;
     { provide: SendFormConfigService, useClass: DefaultSendFormConfigService },
     { provide: SendFormGenerationService, useClass: BrowserSendFormGenerationService },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     SearchModule,

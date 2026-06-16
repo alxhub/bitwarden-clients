@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom, Subject, switchMap, takeUntil } from "rxjs";
@@ -31,6 +31,7 @@ type ExportFormat = {
 @Component({
   selector: "sm-export",
   templateUrl: "./sm-export.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SecretsManagerExportComponent implements OnInit, OnDestroy {

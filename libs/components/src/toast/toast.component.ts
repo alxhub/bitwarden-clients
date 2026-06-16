@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, input } from "@angular/core";
+import { Component, EventEmitter, Output, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nPipe } from "@bitwarden/ui-common";
 
@@ -31,6 +31,7 @@ const variants: Record<ToastVariant, { icon: string; bgColor: string }> = {
 @Component({
   selector: "bit-toast",
   templateUrl: "toast.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [I18nPipe, IconButtonModule, TypographyModule],
 })
 export class ToastComponent {

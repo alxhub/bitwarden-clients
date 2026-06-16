@@ -1,6 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { AbstractControl, FormBuilder, Validators } from "@angular/forms";
 import {
   combineLatest,
@@ -122,6 +129,7 @@ export enum CollectionDialogAction {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "collection-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, AccessSelectorModule, SelectModule],
 })
 export class CollectionDialogComponent implements OnInit, OnDestroy {

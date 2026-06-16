@@ -25,7 +25,7 @@
               >{{ applicationSummary()?.totalAtRiskMemberCount }}</span
             >
             <span bitTypography="body2">{{
-              "cardMetrics" | i18n: applicationSummary()?.totalMemberCount
+              "cardMetrics" | i18n: $safeNavigationMigration(applicationSummary()?.totalMemberCount)
             }}</span>
           </div>
           <div class="tw-flex tw-items-baseline tw-mt-1 tw-gap-2">
@@ -65,7 +65,8 @@
               >{{ applicationSummary()?.totalAtRiskApplicationCount }}</span
             >
             <span bitTypography="body2">{{
-              "cardMetrics" | i18n: applicationSummary()?.totalApplicationCount
+              "cardMetrics"
+                | i18n: $safeNavigationMigration(applicationSummary()?.totalApplicationCount)
             }}</span>
           </div>
           <div class="tw-flex tw-items-baseline tw-mt-1 tw-gap-2">

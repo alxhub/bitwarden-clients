@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { TwoFactorRecoverResponse } from "@bitwarden/common/auth/models/response/two-factor-recover.response";
@@ -20,6 +20,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "app-two-factor-recovery",
   templateUrl: "two-factor-recovery.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, DialogModule, ButtonModule, TypographyModule, I18nPipe],
 })
 export class TwoFactorRecoveryComponent {

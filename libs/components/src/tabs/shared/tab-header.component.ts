@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 /**
  * Component used for styling the tab header/background for both content and navigation tabs
@@ -10,6 +10,7 @@ import { Component } from "@angular/core";
   host: {
     class: "tw-flex tw-items-end tw-border-0 tw-border-b tw-border-solid tw-border-border-base",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<ng-content></ng-content>`,
 })
 export class TabHeaderComponent {}

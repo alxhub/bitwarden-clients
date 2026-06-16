@@ -1,6 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import {
   catchError,
@@ -112,6 +119,7 @@ export const openGroupAddEditDialog = (
 @Component({
   selector: "app-group-add-edit",
   templateUrl: "group-add-edit.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class GroupAddEditComponent implements OnInit, OnDestroy {

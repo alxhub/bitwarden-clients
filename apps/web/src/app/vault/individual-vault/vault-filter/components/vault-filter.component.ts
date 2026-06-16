@@ -1,4 +1,13 @@
-import { Component, EventEmitter, inject, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   combineLatest,
   distinctUntilChanged,
@@ -51,6 +60,7 @@ import { OrganizationOptionsComponent } from "./organization-options.component";
 @Component({
   selector: "app-vault-filter",
   templateUrl: "vault-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VaultFilterComponent implements OnInit, OnDestroy {

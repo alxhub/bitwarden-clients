@@ -1,4 +1,4 @@
-import { Component, OnInit, viewChild } from "@angular/core";
+import { Component, OnInit, viewChild, ChangeDetectionStrategy } from "@angular/core";
 import { ToastContainerDirective, ToastrService } from "ngx-toastr";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
@@ -6,6 +6,7 @@ import { ToastContainerDirective, ToastrService } from "ngx-toastr";
 @Component({
   selector: "bit-toast-container",
   templateUrl: "toast-container.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ToastContainerDirective],
 })
 export class ToastContainerComponent implements OnInit {

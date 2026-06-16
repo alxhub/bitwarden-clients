@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Inject, ViewChild } from "@angular/core";
+import { Component, Inject, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormGroupDirective, ReactiveFormsModule } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -34,6 +34,7 @@ import { UserVerificationFormInputComponent } from "./user-verification-form-inp
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "user-verification-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

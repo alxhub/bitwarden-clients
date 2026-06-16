@@ -136,7 +136,7 @@
       </div>
 
       <!-- Secrets Manager Section -->
-      @let secretsManagerSeats = cart.secretsManager?.seats;
+      @let secretsManagerSeats = $safeNavigationMigration(cart.secretsManager?.seats);
       @if (secretsManagerSeats) {
         <div id="secrets-manager" class="tw-border-b tw-border-secondary-100 tw-py-2">
           <div class="tw-flex tw-justify-between">
@@ -174,7 +174,8 @@
           </div>
 
           <!-- Additional Service Accounts -->
-          @let additionalServiceAccounts = cart.secretsManager?.additionalServiceAccounts;
+          @let additionalServiceAccounts =
+            $safeNavigationMigration(cart.secretsManager?.additionalServiceAccounts);
           @if (additionalServiceAccounts) {
             <div id="additional-service-accounts" class="tw-flex tw-justify-between">
               <div bitTypography="body1" class="tw-text-muted tw-font-normal">

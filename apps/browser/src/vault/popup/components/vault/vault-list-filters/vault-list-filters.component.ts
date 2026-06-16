@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { combineLatest, map, shareReplay } from "rxjs";
 
@@ -13,6 +13,7 @@ import { VaultPopupListFiltersService } from "../../../services/vault-popup-list
 @Component({
   selector: "app-vault-list-filters",
   templateUrl: "./vault-list-filters.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, ChipFilterComponent, ReactiveFormsModule],
 })
 export class VaultListFiltersComponent {

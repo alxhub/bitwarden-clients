@@ -2,7 +2,15 @@
 // @ts-strict-ignore
 import { animate, style, transition, trigger } from "@angular/animations";
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   ControlValueAccessor,
   FormControl,
@@ -58,6 +66,7 @@ import { ActiveClientVerificationOption } from "./active-client-verification-opt
       transition(":enter", [style({ opacity: 0 }), animate("100ms", style({ opacity: 1 }))]),
     ]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Subject, combineLatest, filter, startWith, switchMap, takeUntil } from "rxjs";
 
@@ -20,6 +20,7 @@ import { ServiceAccountService } from "./service-account.service";
 @Component({
   selector: "sm-service-account",
   templateUrl: "./service-account.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ServiceAccountComponent implements OnInit, OnDestroy {

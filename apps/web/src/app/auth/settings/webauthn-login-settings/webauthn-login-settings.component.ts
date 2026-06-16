@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnDestroy, OnInit } from "@angular/core";
+import { Component, HostBinding, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Subject, switchMap, takeUntil } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -23,6 +23,7 @@ import { openEnableCredentialDialogComponent } from "./enable-encryption-dialog/
   host: {
     "aria-live": "polite",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {

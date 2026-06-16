@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   FormArray,
   FormBuilder,
@@ -48,6 +48,7 @@ interface Key {
 @Component({
   selector: "app-two-factor-setup-yubikey",
   templateUrl: "two-factor-setup-yubikey.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

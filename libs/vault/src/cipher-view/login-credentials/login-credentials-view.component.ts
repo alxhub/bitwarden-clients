@@ -12,6 +12,7 @@ import {
   Output,
   SimpleChanges,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { Observable, switchMap } from "rxjs";
 
@@ -46,6 +47,7 @@ type TotpCodeValues = {
 @Component({
   selector: "app-login-credentials-view",
   templateUrl: "login-credentials-view.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

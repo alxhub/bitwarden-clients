@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterModule } from "@angular/router";
 import { map } from "rxjs";
@@ -29,6 +29,7 @@ import { DesktopSideNavComponent } from "./desktop-side-nav.component";
     VaultFilterComponent,
     SendFiltersNavComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./desktop-layout.component.html",
 })
 export class DesktopLayoutComponent {

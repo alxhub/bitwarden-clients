@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input, OnChanges, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -10,6 +10,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 @Component({
   selector: "app-avatar",
   template: `<img *ngIf="src" [src]="src" [ngClass]="{ 'rounded-circle': circle }" />`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AvatarComponent implements OnChanges, OnInit {

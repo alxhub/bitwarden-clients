@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { PaymentMethodType, TransactionType } from "@bitwarden/common/billing/enums";
 import {
@@ -13,6 +13,7 @@ import {
 @Component({
   selector: "app-billing-history",
   templateUrl: "billing-history.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BillingHistoryComponent {

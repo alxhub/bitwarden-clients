@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -46,6 +46,7 @@ import {
     TooltipDirective,
   ],
   selector: "app-send-list-items-container",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "send-list-items-container.component.html",
 })
 export class SendListItemsContainerComponent {

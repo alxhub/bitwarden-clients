@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule, Location } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
@@ -33,6 +33,7 @@ import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-p
 @Component({
   selector: "app-assign-collections",
   templateUrl: "./assign-collections.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

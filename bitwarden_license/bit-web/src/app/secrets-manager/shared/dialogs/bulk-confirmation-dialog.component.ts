@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { DialogRef, DIALOG_DATA } from "@bitwarden/components";
 
@@ -27,6 +27,7 @@ export enum BulkConfirmationResult {
 @Component({
   selector: "sm-bulk-confirmation-dialog",
   templateUrl: "./bulk-confirmation-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkConfirmationDialogComponent implements OnInit {

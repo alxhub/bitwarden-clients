@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -14,6 +14,7 @@ import { ButtonModule } from "@bitwarden/components";
 @Component({
   selector: "app-authentication-timeout",
   imports: [CommonModule, JslibModule, ButtonModule, RouterModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <p class="tw-text-center">
       {{ "authenticationSessionTimedOut" | i18n }}

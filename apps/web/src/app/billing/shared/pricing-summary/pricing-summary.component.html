@@ -203,8 +203,9 @@
                   {{ "serviceAccounts" | i18n | lowercase }}
                   &times;
                   {{
-                    summaryData.selectedPlan?.SecretsManager?.additionalPricePerServiceAccount
-                      | currency: "$"
+                    $safeNavigationMigration(
+                      summaryData.selectedPlan?.SecretsManager?.additionalPricePerServiceAccount
+                    ) | currency: "$"
                   }}
                   /{{ summaryData.selectedPlanInterval | i18n }}
                 </span>

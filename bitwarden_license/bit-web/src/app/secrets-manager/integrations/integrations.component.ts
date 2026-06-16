@@ -1,4 +1,4 @@
-import { Component, Signal } from "@angular/core";
+import { Component, Signal, ChangeDetectionStrategy } from "@angular/core";
 
 import { Integration } from "@bitwarden/bit-common/dirt/organization-integrations/models/integration";
 import { IntegrationStateService } from "@bitwarden/bit-common/dirt/organization-integrations/shared/integration-state.service";
@@ -9,6 +9,7 @@ import { IntegrationType } from "@bitwarden/common/enums";
 @Component({
   selector: "sm-integrations",
   templateUrl: "./integrations.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class IntegrationsComponent {

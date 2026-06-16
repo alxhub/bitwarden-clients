@@ -52,6 +52,7 @@ import { AccountSecurityComponent } from "./account-security.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "app-pop-out",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: ` <ng-content></ng-content>`,
 })
 class MockPopOutComponent {}

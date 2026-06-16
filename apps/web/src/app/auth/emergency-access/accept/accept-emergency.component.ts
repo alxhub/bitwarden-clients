@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
@@ -18,6 +18,7 @@ import { EmergencyAccessService } from "../services/emergency-access.service";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   imports: [SharedModule, EmergencyAccessModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "accept-emergency.component.html",
 })
 export class AcceptEmergencyComponent extends BaseAcceptComponent {

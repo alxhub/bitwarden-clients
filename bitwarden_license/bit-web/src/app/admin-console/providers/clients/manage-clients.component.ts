@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import {
@@ -60,6 +60,7 @@ import { ReplacePipe } from "./replace.pipe";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "manage-clients.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AvatarModule,
     TableModule,

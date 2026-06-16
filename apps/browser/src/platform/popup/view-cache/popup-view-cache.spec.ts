@@ -1,4 +1,4 @@
-import { Component, inject, Injector } from "@angular/core";
+import { Component, inject, Injector, ChangeDetectionStrategy } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -23,6 +23,7 @@ import { PopupViewCacheService } from "./popup-view-cache.service";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class EmptyComponent {}
@@ -31,6 +32,7 @@ export class EmptyComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TestComponent {

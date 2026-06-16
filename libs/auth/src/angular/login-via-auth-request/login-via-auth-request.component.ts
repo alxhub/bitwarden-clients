@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { IsActiveMatchOptions, Router, RouterModule } from "@angular/router";
 import { Observable, firstValueFrom, map } from "rxjs";
@@ -61,6 +61,7 @@ const matchOptions: IsActiveMatchOptions = {
 @Component({
   templateUrl: "./login-via-auth-request.component.html",
   imports: [ButtonModule, CommonModule, JslibModule, LinkModule, RouterModule, IconModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [{ provide: LoginViaAuthRequestCacheService }],
 })
 export class LoginViaAuthRequestComponent implements OnInit, OnDestroy {

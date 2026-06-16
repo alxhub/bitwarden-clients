@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -17,6 +17,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "download-bitwarden.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

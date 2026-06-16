@@ -1,5 +1,5 @@
 import { DIALOG_DATA } from "@angular/cdk/dialog";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -76,6 +76,7 @@ type DialogResult =
     </form>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [EnterBillingAddressComponent, SharedModule],
 })
 export class EditBillingAddressDialogComponent {

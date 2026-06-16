@@ -8,6 +8,7 @@ import {
   TemplateRef,
   viewChild,
   ViewContainerRef,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { NavigationEnd, Router } from "@angular/router";
@@ -18,6 +19,7 @@ import { filter } from "rxjs/operators";
 @Component({
   selector: "app-reports-layout",
   templateUrl: "reports-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ReportsLayoutComponent implements AfterViewInit, OnDestroy {

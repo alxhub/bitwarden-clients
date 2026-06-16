@@ -11,6 +11,7 @@ import {
   TemplateRef,
   viewChild,
   ViewContainerRef,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
@@ -31,6 +32,7 @@ import { ReportVariant, reports, ReportType, ReportEntry } from "../../../dirt/r
 @Component({
   selector: "app-org-reports-home",
   templateUrl: "reports-home.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ReportsHomeComponent implements OnInit, AfterViewInit, OnDestroy {

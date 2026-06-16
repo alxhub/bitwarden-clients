@@ -8,6 +8,7 @@ import {
   output,
   signal,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed, toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
@@ -102,6 +103,7 @@ export type UpgradePaymentParams = {
     EnterBillingAddressComponent,
     BillingServicesModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./upgrade-payment.component.html",
 })
 export class UpgradePaymentComponent implements OnInit, AfterViewInit {

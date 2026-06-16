@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { map, Observable, startWith, Subject, takeUntil } from "rxjs";
 
@@ -158,6 +158,7 @@ type Scenario =
     </form>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class EnterBillingAddressComponent implements OnInit, OnDestroy {

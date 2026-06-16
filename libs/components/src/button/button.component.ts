@@ -1,4 +1,12 @@
-import { Component, inject, ElementRef, computed, input, model } from "@angular/core";
+import {
+  Component,
+  inject,
+  ElementRef,
+  computed,
+  input,
+  model,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { AriaDisableDirective } from "../a11y";
 import { BaseButtonDirective } from "../shared/base-button.directive";
@@ -19,6 +27,7 @@ export type ButtonSize = "default" | "small" | "large";
   host: {
     "[class]": "classList()",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   hostDirectives: [
     AriaDisableDirective,
     {

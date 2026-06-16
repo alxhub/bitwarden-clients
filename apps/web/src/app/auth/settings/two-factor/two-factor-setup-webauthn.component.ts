@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject, NgZone } from "@angular/core";
+import { Component, Inject, NgZone, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -49,6 +49,7 @@ interface Key {
 @Component({
   selector: "app-two-factor-setup-webauthn",
   templateUrl: "two-factor-setup-webauthn.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

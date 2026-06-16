@@ -6,6 +6,7 @@ import {
   HostListener,
   inject,
   input,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -22,6 +23,7 @@ type CharacterType = "letter" | "emoji" | "special" | "number";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "bit-color-password",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `@for (character of passwordCharArray(); track $index; let i = $index) {
     <span [class]="getCharacterClass(character)" class="tw-font-mono" data-password-character>
       <span>{{ character }}</span>

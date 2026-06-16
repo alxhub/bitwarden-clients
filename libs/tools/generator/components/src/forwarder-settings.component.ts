@@ -7,6 +7,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { map, ReplaySubject, skip, Subject, switchAll, takeUntil, withLatestFrom } from "rxjs";
@@ -39,6 +40,7 @@ const Controls = Object.freeze({
 @Component({
   selector: "tools-forwarder-settings",
   templateUrl: "forwarder-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ReactiveFormsModule,
     FormFieldModule,

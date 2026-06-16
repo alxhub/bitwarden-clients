@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -19,6 +19,7 @@ import { EmergencyViewDialogComponent } from "./emergency-view-dialog.component"
 @Component({
   templateUrl: "emergency-access-view.component.html",
   providers: [{ provide: CipherFormConfigService, useClass: DefaultCipherFormConfigService }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class EmergencyAccessViewComponent implements OnInit {

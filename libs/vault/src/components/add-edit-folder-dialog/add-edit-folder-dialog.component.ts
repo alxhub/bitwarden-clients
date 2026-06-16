@@ -7,6 +7,7 @@ import {
   Inject,
   OnInit,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
@@ -52,6 +53,7 @@ export type AddEditFolderDialogData = {
 @Component({
   selector: "vault-add-edit-folder-dialog",
   templateUrl: "./add-edit-folder-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

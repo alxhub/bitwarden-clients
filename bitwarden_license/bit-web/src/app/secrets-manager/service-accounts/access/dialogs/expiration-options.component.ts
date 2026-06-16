@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { DatePipe } from "@angular/common";
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -35,6 +35,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
       useExisting: ExpirationOptionsComponent,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ExpirationOptionsComponent

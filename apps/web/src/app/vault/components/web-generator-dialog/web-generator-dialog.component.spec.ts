@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
@@ -20,6 +20,7 @@ import {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "vault-cipher-form-generator",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: "",
 })
 // FIXME(https://bitwarden.atlassian.net/browse/PM-28231): Use Component suffix

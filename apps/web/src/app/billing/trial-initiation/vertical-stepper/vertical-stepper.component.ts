@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CdkStepper } from "@angular/cdk/stepper";
-import { Component, Input, QueryList } from "@angular/core";
+import { Component, Input, QueryList, ChangeDetectionStrategy } from "@angular/core";
 
 import { VerticalStep } from "./vertical-step.component";
 
@@ -11,6 +11,7 @@ import { VerticalStep } from "./vertical-step.component";
   selector: "app-vertical-stepper",
   templateUrl: "vertical-stepper.component.html",
   providers: [{ provide: CdkStepper, useExisting: VerticalStepperComponent }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VerticalStepperComponent extends CdkStepper {

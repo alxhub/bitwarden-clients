@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, computed, DestroyRef, input, Input, OnInit } from "@angular/core";
+import {
+  Component,
+  computed,
+  DestroyRef,
+  input,
+  Input,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from "@angular/forms";
 import { concatMap, distinctUntilChanged, firstValueFrom, map } from "rxjs";
@@ -44,6 +52,7 @@ import { CipherFormContainer } from "../../cipher-form-container";
 @Component({
   selector: "vault-item-details-section",
   templateUrl: "./item-details-section.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CardComponent,
     ChipActionComponent,

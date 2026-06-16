@@ -1,5 +1,5 @@
 import { CommonModule, Location } from "@angular/common";
-import { Component, OnDestroy, OnInit, viewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, viewChild, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormGroupDirective, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { firstValueFrom, Subject, takeUntil } from "rxjs";
@@ -38,6 +38,7 @@ import { NewDeviceVerificationComponentService } from "./new-device-verification
 @Component({
   selector: "app-new-device-verification",
   templateUrl: "./new-device-verification.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

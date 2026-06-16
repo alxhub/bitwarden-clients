@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { OrganizationUserBulkResponse } from "@bitwarden/admin-console/common";
 import {
@@ -42,6 +42,7 @@ type BulkStatusDialogData = {
 @Component({
   selector: "member-bulk-status",
   templateUrl: "bulk-status.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkStatusComponent implements OnInit {

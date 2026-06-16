@@ -3,7 +3,7 @@
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { CdkDragDrop, DragDropModule, moveItemInArray } from "@angular/cdk/drag-drop";
 import { AsyncPipe } from "@angular/common";
-import { Component, OnInit, QueryList, ViewChildren } from "@angular/core";
+import { Component, OnInit, QueryList, ViewChildren, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { filter, Subject, switchMap, take } from "rxjs";
@@ -41,6 +41,7 @@ interface UriField {
 @Component({
   selector: "vault-autofill-options",
   templateUrl: "./autofill-options.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DragDropModule,
     SectionHeaderComponent,

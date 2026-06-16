@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { combineLatest, map, Observable, startWith, switchMap } from "rxjs";
 
 import { NudgesService } from "@bitwarden/angular/vault";
@@ -24,6 +24,7 @@ import { NavButton } from "../platform/popup/layout/popup-tab-navigation.compone
 @Component({
   selector: "app-tabs-v2",
   templateUrl: "./tabs-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TabsV2Component {

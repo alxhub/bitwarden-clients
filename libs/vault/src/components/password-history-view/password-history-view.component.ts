@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { OnInit, Component, Input } from "@angular/core";
+import { OnInit, Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -13,6 +13,7 @@ import { ItemModule, ColorPasswordModule, IconButtonModule } from "@bitwarden/co
 @Component({
   selector: "vault-password-history-view",
   templateUrl: "./password-history-view.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, ItemModule, ColorPasswordModule, IconButtonModule, JslibModule],
 })
 export class PasswordHistoryViewComponent implements OnInit {

@@ -7,6 +7,7 @@ import {
   Signal,
   TemplateRef,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { TooltipPosition } from "./tooltip-positions";
@@ -28,6 +29,7 @@ export const TOOLTIP_DATA = new InjectionToken<TooltipData>("TOOLTIP_DATA");
 @Component({
   selector: "bit-tooltip",
   templateUrl: "./tooltip.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule],
 })
 export class TooltipComponent {

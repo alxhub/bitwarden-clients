@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { switchMap } from "rxjs";
 
@@ -76,6 +76,7 @@ export interface AddEditCipherDialogCloseResult {
     CipherAttachmentsComponent,
     ItemModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [{ provide: CipherFormGenerationService, useClass: WebCipherFormGenerationService }],
 })
 // FIXME(https://bitwarden.atlassian.net/browse/PM-28231): Use Component suffix

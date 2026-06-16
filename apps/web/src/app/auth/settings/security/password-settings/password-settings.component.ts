@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -17,6 +17,7 @@ import { WebauthnLoginSettingsModule } from "../../webauthn-login-settings";
 @Component({
   selector: "app-password-settings",
   templateUrl: "password-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CalloutModule, ChangePasswordComponent, I18nPipe, WebauthnLoginSettingsModule],
 })
 export class PasswordSettingsComponent implements OnInit {

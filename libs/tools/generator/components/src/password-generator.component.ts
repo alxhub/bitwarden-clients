@@ -11,6 +11,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import {
   BehaviorSubject,
@@ -74,6 +75,7 @@ import { toAlgorithmInfo, translate } from "./util";
 @Component({
   selector: "tools-password-generator",
   templateUrl: "password-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ToggleGroupModule,
     BaseCardDirective,

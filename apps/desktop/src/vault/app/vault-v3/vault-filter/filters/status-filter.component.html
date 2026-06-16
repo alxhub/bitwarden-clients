@@ -1,6 +1,6 @@
 <bit-nav-item
   [icon]="archiveFilter.icon"
-  [forceActiveStyles]="activeFilter()?.isArchived"
+  [forceActiveStyles]="$safeNavigationMigration(activeFilter()?.isArchived)"
   (click)="handleArchiveFilter($event)"
   [text]="archiveFilter.name | i18n"
   [attr.aria-pressed]="activeFilter()?.isArchived"
@@ -13,7 +13,7 @@
 </bit-nav-item>
 <bit-nav-item
   [icon]="trashFilter.icon"
-  [forceActiveStyles]="activeFilter()?.isDeleted"
+  [forceActiveStyles]="$safeNavigationMigration(activeFilter()?.isDeleted)"
   (click)="applyFilter('trash')"
   [text]="trashFilter.name | i18n"
   [attr.aria-pressed]="activeFilter()?.isDeleted"

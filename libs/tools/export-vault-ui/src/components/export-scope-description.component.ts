@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, effect, input } from "@angular/core";
+import { Component, effect, input, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -16,6 +16,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "tools-export-scope-description",
   templateUrl: "export-scope-description.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [I18nPipe, TypographyModule],
 })
 export class ExportScopeDescriptionComponent {

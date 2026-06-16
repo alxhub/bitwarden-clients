@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
@@ -12,6 +12,7 @@ import { SharedModule } from "../../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "security.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, HeaderModule],
 })
 export class SecurityComponent implements OnInit {

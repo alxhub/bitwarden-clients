@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { BaseCardDirective } from "./base-card.directive";
 
@@ -11,6 +11,7 @@ import { BaseCardDirective } from "./base-card.directive";
 @Component({
   selector: "bit-base-card",
   template: `<ng-content></ng-content>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   hostDirectives: [BaseCardDirective],
 })
 export class BaseCardComponent {}

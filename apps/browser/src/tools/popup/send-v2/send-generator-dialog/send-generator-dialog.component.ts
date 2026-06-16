@@ -2,7 +2,7 @@
 // @ts-strict-ignore
 import { Overlay } from "@angular/cdk/overlay";
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import {
@@ -34,6 +34,7 @@ export interface BrowserSendGeneratorDialogResult {
 @Component({
   selector: "tools-browser-send-generator-dialog",
   templateUrl: "./send-generator-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,

@@ -9,7 +9,7 @@
     </p>
 
     <!-- Plan Features List -->
-    <ng-container [ngSwitch]="currentPlan?.productTier">
+    <ng-container [ngSwitch]="$safeNavigationMigration(currentPlan?.productTier)">
       <ul class="bwi-ul tw-text-xs" *ngSwitchCase="productTypes.Enterprise">
         <li>
           <i class="bwi bwi-check tw-text-muted bwi-li" aria-hidden="true"></i>

@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { PluralizePipe } from "@bitwarden/angular/pipes/pluralize.pipe";
 import { DIALOG_DATA, DialogConfig, DialogRef, DialogService } from "@bitwarden/components";
@@ -16,6 +16,7 @@ import { SharedModule } from "../../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   imports: [SharedModule, AssignCollectionsComponent, PluralizePipe],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./assign-collections-web.component.html",
 })
 export class AssignCollectionsWebComponent {

@@ -6,6 +6,7 @@ import {
   input,
   OnDestroy,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable, Subject, combineLatest, lastValueFrom, takeUntil } from "rxjs";
@@ -52,6 +53,7 @@ import {
 @Component({
   selector: "app-integration-card",
   templateUrl: "./integration-card.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, BaseCardComponent, CardContentComponent],
 })
 export class IntegrationCardComponent implements AfterViewInit, OnDestroy {

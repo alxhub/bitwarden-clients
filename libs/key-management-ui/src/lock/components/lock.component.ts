@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
+import { Component, NgZone, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import {
@@ -91,6 +91,7 @@ const BIOMETRIC_UNLOCK_TEMPORARY_UNAVAILABLE_STATUSES = [
 @Component({
   selector: "bit-lock",
   templateUrl: "lock.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

@@ -1,5 +1,5 @@
 import { DIALOG_DATA } from "@angular/cdk/dialog";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogConfig, DialogRef, DialogService, ToastService } from "@bitwarden/components";
@@ -50,6 +50,7 @@ type DialogParams = {
     </form>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [EnterPaymentMethodComponent, SharedModule],
 })
 export class ChangePaymentMethodDialogComponent extends SubmitPaymentMethodDialogComponent {

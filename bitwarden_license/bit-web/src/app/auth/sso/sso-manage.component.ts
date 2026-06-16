@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   AbstractControl,
   FormBuilder,
@@ -55,6 +55,7 @@ const defaultSigningAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha2
 @Component({
   selector: "auth-sso-manage",
   templateUrl: "sso-manage.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SsoManageComponent implements OnInit, OnDestroy {

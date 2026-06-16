@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -41,6 +41,7 @@ export type TwoFactorOptionsDialogResult = {
     ItemModule,
     SvgModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [],
 })
 export class TwoFactorOptionsComponent implements OnInit {

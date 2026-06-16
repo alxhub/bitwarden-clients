@@ -1,4 +1,4 @@
-@let isDrawer = dialogRef?.isDrawer;
+@let isDrawer = $safeNavigationMigration(dialogRef?.isDrawer);
 <!-- Storybook/Angular bugs out without this nullcheck. See the Access Selector Dialog story when removed. -->
 @let widthClass = width() ?? "";
 <section

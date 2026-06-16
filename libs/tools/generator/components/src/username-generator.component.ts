@@ -11,6 +11,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import {
@@ -91,6 +92,7 @@ const NONE_SELECTED = "none";
 @Component({
   selector: "tools-username-generator",
   templateUrl: "username-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     BaseCardDirective,
     CardComponent,

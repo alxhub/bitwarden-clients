@@ -2,7 +2,15 @@
 // @ts-strict-ignore
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { AsyncPipe } from "@angular/common";
-import { Component, input, output, effect, inject, computed } from "@angular/core";
+import {
+  Component,
+  input,
+  output,
+  effect,
+  inject,
+  computed,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Observable, of, switchMap } from "rxjs";
 
@@ -51,6 +59,7 @@ type EmptyStateItem = {
 @Component({
   selector: "app-vault-list",
   templateUrl: "vault-list.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ScrollingModule,
     TableModule,

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 
 import { DevicePendingAuthRequest } from "@bitwarden/common/auth/abstractions/devices/responses/device.response";
 import { BadgeModule, ItemModule } from "@bitwarden/components";
@@ -14,6 +14,7 @@ import { DeviceDisplayData } from "./device-management.component";
   standalone: true,
   selector: "auth-device-management-item-group",
   templateUrl: "./device-management-item-group.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BadgeModule, CommonModule, ItemModule, I18nPipe],
 })
 export class DeviceManagementItemGroupComponent {

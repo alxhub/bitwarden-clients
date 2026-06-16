@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit, output } from "@angular/core";
+import { Component, Input, OnInit, output, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -51,6 +51,7 @@ import {
 @Component({
   selector: "auth-change-password",
   templateUrl: "change-password.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CalloutComponent, CommonModule, IconModule, InputPasswordComponent, I18nPipe],
 })
 export class ChangePasswordComponent implements OnInit {

@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input, OnDestroy } from "@angular/core";
+import { Component, Input, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { Subject } from "rxjs";
 
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
@@ -13,6 +13,7 @@ import { SharedModule } from "../shared";
 @Component({
   selector: "dynamic-avatar",
   imports: [SharedModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<span [title]="title">
     <bit-avatar
       appStopClick

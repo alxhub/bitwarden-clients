@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, inject, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   AbstractControl,
   FormBuilder,
@@ -90,6 +90,7 @@ function onlyHttpsValidator(): ValidatorFn {
 @Component({
   selector: "self-hosted-env-config-dialog",
   templateUrl: "self-hosted-env-config-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

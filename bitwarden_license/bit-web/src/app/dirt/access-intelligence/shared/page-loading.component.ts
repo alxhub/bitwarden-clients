@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from "@angular/animations";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -26,6 +26,7 @@ import {
   animations: [
     trigger("fadeOut", [transition(":leave", [animate("300ms ease-out", style({ opacity: 0 }))])]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="tw-sr-only" role="status">{{ "loading" | i18n }}</div>
 

@@ -1,5 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, ViewChildren, QueryList, ElementRef, inject, DOCUMENT } from "@angular/core";
+import {
+  Component,
+  ViewChildren,
+  QueryList,
+  ElementRef,
+  inject,
+  DOCUMENT,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { debounceTime, fromEvent } from "rxjs";
 
@@ -11,6 +19,7 @@ import { DarkImageSourceDirective } from "@bitwarden/vault";
 @Component({
   selector: "vault-add-extension-videos",
   templateUrl: "./add-extension-videos.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, DarkImageSourceDirective],
 })
 export class AddExtensionVideosComponent {

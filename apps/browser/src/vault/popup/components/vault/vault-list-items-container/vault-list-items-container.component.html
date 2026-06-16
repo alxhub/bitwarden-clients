@@ -108,7 +108,9 @@
             (dblclick)="launchCipher(cipher)"
             [appA11yTitle]="
               cipherItemTitleKey()(cipher)
-                | i18n: cipher.name : CipherViewLikeUtils.getLogin(cipher)?.username
+                | i18n
+                  : cipher.name
+                  : $safeNavigationMigration(CipherViewLikeUtils.getLogin(cipher)?.username)
             "
             class="{{ itemHeightClass }}"
           >

@@ -1,5 +1,5 @@
 import { CommonModule, Location } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, Subject, firstValueFrom, map, of, startWith, switchMap } from "rxjs";
 
@@ -37,6 +37,7 @@ import { AccountSwitcherService } from "./services/account-switcher.service";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "account-switcher.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

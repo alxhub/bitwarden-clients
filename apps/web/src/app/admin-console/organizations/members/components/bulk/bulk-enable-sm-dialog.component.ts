@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -25,6 +25,7 @@ export type BulkEnableSecretsManagerDialogData = {
 @Component({
   templateUrl: `bulk-enable-sm-dialog.component.html`,
   selector: "member-bulk-enable-sm-dialog",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkEnableSecretsManagerDialogComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ChangePasswordComponent } from "@bitwarden/angular/auth/password-management/change-password";
 import { InputPasswordFlow } from "@bitwarden/auth/angular";
@@ -14,6 +14,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
   standalone: true,
   selector: "change-password-page",
   templateUrl: "change-password-page.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ChangePasswordComponent,
     I18nPipe,

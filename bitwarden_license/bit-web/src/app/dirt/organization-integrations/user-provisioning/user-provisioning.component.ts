@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { FilterIntegrationsPipe } from "@bitwarden/bit-common/dirt/organization-integrations/shared/filter-integrations.pipe";
 import { IntegrationStateService } from "@bitwarden/bit-common/dirt/organization-integrations/shared/integration-state.service";
@@ -12,6 +12,7 @@ import { IntegrationGridComponent } from "../integration-grid/integration-grid.c
 @Component({
   selector: "user-provisioning",
   templateUrl: "user-provisioning.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, IntegrationGridComponent, FilterIntegrationsPipe],
 })
 export class UserProvisioningComponent {

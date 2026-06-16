@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, computed, DestroyRef, inject, input, OnInit } from "@angular/core";
+import {
+  Component,
+  computed,
+  DestroyRef,
+  inject,
+  input,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
@@ -30,6 +38,7 @@ import { CipherFormContainer } from "../../cipher-form-container";
 @Component({
   selector: "vault-sshkey-section",
   templateUrl: "./sshkey-section.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CardComponent,
     TypographyModule,

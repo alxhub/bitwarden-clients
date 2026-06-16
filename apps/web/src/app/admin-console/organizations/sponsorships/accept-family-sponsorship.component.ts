@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { Params } from "@angular/router";
 
 import { BitwardenLogo } from "@bitwarden/assets/svg";
@@ -22,6 +22,7 @@ import { BaseAcceptComponent } from "../../../common/base.accept.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "accept-family-sponsorship.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, I18nPipe, SvgModule],
 })
 export class AcceptFamilySponsorshipComponent extends BaseAcceptComponent {

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, inject } from "@angular/core";
+import { Component, DestroyRef, inject, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, lastValueFrom, map, Observable, of, switchMap } from "rxjs";
@@ -27,6 +27,7 @@ import { UpdateLicenseDialogResult } from "../../shared/update-license-types";
 @Component({
   templateUrl: "./self-hosted-premium.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     SectionComponent,

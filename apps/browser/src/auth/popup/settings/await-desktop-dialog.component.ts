@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -12,6 +12,7 @@ import {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "await-desktop-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [JslibModule, ButtonModule, DialogModule],
 })
 export class AwaitDesktopDialogComponent {

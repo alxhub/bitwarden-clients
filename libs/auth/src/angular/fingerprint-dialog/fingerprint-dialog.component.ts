@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
@@ -20,6 +20,7 @@ export type FingerprintDialogData = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "fingerprint-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [JslibModule, ButtonModule, DialogModule, IconModule],
 })
 export class FingerprintDialogComponent {

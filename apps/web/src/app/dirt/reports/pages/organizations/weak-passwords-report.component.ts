@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom, takeUntil, tap } from "rxjs";
 
@@ -42,6 +42,7 @@ import { WeakPasswordsReportComponent as BaseWeakPasswordsReportComponent } from
     RoutedVaultFilterService,
     RoutedVaultFilterBridgeService,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     SharedModule,
     HeaderModule,

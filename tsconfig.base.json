@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "strict": false,
     "pretty": true,
     "moduleResolution": "bundler",
@@ -7,6 +9,7 @@
     "target": "ES2016",
     "module": "ES2020",
     "lib": ["es5", "es6", "es7", "dom", "ES2021", "ESNext.Disposable"],
+    "types": ["jest", "node"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

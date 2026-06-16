@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 
 import { GearIcon } from "@bitwarden/assets/svg";
 import { NoItemsModule } from "@bitwarden/components";
@@ -9,6 +9,7 @@ import { SharedOrganizationModule } from "@bitwarden/web-vault/app/admin-console
 @Component({
   selector: "app-no-clients",
   imports: [SharedOrganizationModule, NoItemsModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <bit-no-items [icon]="icon">
       <div slot="title">{{ "noClients" | i18n }}</div>

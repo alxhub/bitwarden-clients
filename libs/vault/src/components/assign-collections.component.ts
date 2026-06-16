@@ -10,6 +10,7 @@ import {
   OnInit,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import {
@@ -101,6 +102,7 @@ const MY_VAULT_ID = "MyVault";
 @Component({
   selector: "assign-collections",
   templateUrl: "assign-collections.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

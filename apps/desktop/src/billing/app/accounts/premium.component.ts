@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { PremiumComponent as BasePremiumComponent } from "@bitwarden/angular/billing/components/premium.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -16,6 +16,7 @@ import { DialogService, ToastService } from "@bitwarden/components";
 @Component({
   selector: "app-premium",
   templateUrl: "premium.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class PremiumComponent extends BasePremiumComponent {

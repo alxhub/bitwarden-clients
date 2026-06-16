@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   BehaviorSubject,
   combineLatest,
@@ -103,6 +110,7 @@ type GetWarning$ = () => Observable<TaxIdWarningType | null>;
       </bit-banner>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BannerModule, SharedModule],
 })
 export class TaxIdWarningComponent implements OnInit {

@@ -22,7 +22,10 @@
         <input
           bitInput
           type="text"
-          [value]="sendFormService.originalSendView()?.deletionDate | date: 'short'"
+          [value]="
+            $safeNavigationMigration(sendFormService.originalSendView()?.deletionDate)
+              | date: 'short'
+          "
           readonly
         />
       } @else {
@@ -51,7 +54,9 @@
         <input
           bitInput
           type="text"
-          [value]="sendFormService.originalSendView()?.authType | AuthTypeName"
+          [value]="
+            $safeNavigationMigration(sendFormService.originalSendView()?.authType) | AuthTypeName
+          "
           readonly
         />
       } @else {

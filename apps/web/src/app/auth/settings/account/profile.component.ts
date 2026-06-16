@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { firstValueFrom, map, Observable, Subject, takeUntil } from "rxjs";
 
@@ -28,6 +28,7 @@ import { ChangeAvatarDialogComponent } from "./change-avatar-dialog.component";
 @Component({
   selector: "app-profile",
   templateUrl: "profile.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, DynamicAvatarComponent, AccountFingerprintComponent],
 })
 export class ProfileComponent implements OnInit, OnDestroy {

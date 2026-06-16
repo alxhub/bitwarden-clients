@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { BehaviorSubject, filter, merge, Observable, shareReplay, switchMap, tap } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -24,6 +24,7 @@ type View = {
 @Component({
   templateUrl: "./account-payment-details.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DisplayAccountCreditComponent,
     DisplayPaymentMethodComponent,

@@ -1,5 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit, Output, EventEmitter, output } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { ReactiveFormsModule, FormsModule, FormControl } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -42,6 +50,7 @@ import { TwoFactorAuthEmailComponentCacheService } from "./two-factor-auth-email
     AsyncActionsModule,
     FormsModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       provide: TwoFactorAuthEmailComponentCacheService,

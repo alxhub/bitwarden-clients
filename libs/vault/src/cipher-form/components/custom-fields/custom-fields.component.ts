@@ -15,6 +15,7 @@ import {
   Output,
   QueryList,
   ViewChildren,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormArray, FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -72,6 +73,7 @@ export type CustomField = {
 @Component({
   selector: "vault-custom-fields",
   templateUrl: "./custom-fields.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
     CommonModule,

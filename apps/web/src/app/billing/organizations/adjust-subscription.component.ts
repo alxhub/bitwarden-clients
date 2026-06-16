@@ -1,6 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Subject, firstValueFrom, takeUntil } from "rxjs";
 
@@ -21,6 +29,7 @@ import { ToastService } from "@bitwarden/components";
 @Component({
   selector: "app-adjust-subscription",
   templateUrl: "adjust-subscription.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 // FIXME(https://bitwarden.atlassian.net/browse/PM-28231): Use Component suffix

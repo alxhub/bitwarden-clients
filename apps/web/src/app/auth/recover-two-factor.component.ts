@@ -1,4 +1,4 @@
-import { Component, DestroyRef, OnInit } from "@angular/core";
+import { Component, DestroyRef, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router, RouterLink } from "@angular/router";
@@ -30,6 +30,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "app-recover-two-factor",
   templateUrl: "recover-two-factor.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ReactiveFormsModule,
     RouterLink,

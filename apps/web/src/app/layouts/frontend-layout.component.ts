@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -12,6 +12,7 @@ import { SharedModule } from "../shared";
 @Component({
   selector: "app-frontend-layout",
   templateUrl: "frontend-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, EnvironmentSelectorComponent],
 })
 export class FrontendLayoutComponent implements OnInit, OnDestroy {

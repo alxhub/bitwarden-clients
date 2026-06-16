@@ -9,6 +9,7 @@ import {
   Input,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import {
@@ -47,6 +48,7 @@ import { AdvancedUriOptionDialogComponent } from "./advanced-uri-option-dialog.c
       multi: true,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DragDropModule,
     FormFieldModule,

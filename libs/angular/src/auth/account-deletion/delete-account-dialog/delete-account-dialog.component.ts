@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
@@ -26,6 +26,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "delete-account-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     ReactiveFormsModule,

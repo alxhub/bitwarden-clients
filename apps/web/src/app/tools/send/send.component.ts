@@ -1,7 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, HostListener, viewChildren } from "@angular/core";
+import {
+  Component,
+  OnDestroy,
+  HostListener,
+  viewChildren,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -73,6 +79,7 @@ import { SendSuccessDrawerDialogComponent } from "./shared";
     SendListComponent,
   ],
   templateUrl: "send.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [DefaultSendFormConfigService],
 })
 export class SendComponent implements OnDestroy {

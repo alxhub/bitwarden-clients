@@ -1,4 +1,4 @@
-import { importProvidersFrom, Component } from "@angular/core";
+import { importProvidersFrom, Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import {
   Meta,
@@ -173,6 +173,7 @@ type Story = StoryObj<ExtensionAnonLayoutWrapperComponent>;
 @Component({
   selector: "bit-default-primary-outlet-example-component",
   template: "<p>Primary Outlet Example: <br> your primary component goes here</p>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class DefaultPrimaryOutletExampleComponent {}
@@ -182,6 +183,7 @@ class DefaultPrimaryOutletExampleComponent {}
 @Component({
   selector: "bit-default-secondary-outlet-example-component",
   template: "<p>Secondary Outlet Example: <br> your secondary component goes here</p>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class DefaultSecondaryOutletExampleComponent {}
@@ -191,6 +193,7 @@ class DefaultSecondaryOutletExampleComponent {}
 @Component({
   selector: "bit-default-env-selector-outlet-example-component",
   template: "<p>Env Selector Outlet Example: <br> your env selector component goes here</p>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class DefaultEnvSelectorOutletExampleComponent {}
@@ -288,6 +291,7 @@ const changedData: ExtensionAnonLayoutWrapperData = {
   template: `
     <button type="button" bitButton buttonType="primary" (click)="toggleData()">Toggle Data</button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class DynamicContentExampleComponent {

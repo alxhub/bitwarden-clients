@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { DatePipe } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { ProviderType } from "@bitwarden/common/admin-console/enums";
 import { ProviderSubscriptionResponse } from "@bitwarden/common/billing/models/response/provider-subscription-response";
@@ -28,6 +28,7 @@ type ComponentData = {
 @Component({
   selector: "app-provider-subscription-status",
   templateUrl: "provider-subscription-status.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProviderSubscriptionStatusComponent {

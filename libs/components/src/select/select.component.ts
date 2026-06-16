@@ -14,6 +14,7 @@ import {
   model,
   signal,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ControlValueAccessor, NgControl, ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { NgSelectComponent, NgSelectModule } from "@ng-select/ng-select";
@@ -39,6 +40,7 @@ import { OptionComponent } from "./option.component";
     },
   ],
   imports: [NgSelectModule, ReactiveFormsModule, FormsModule, TypographyDirective, IconComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: "tw-block tw-w-full tw-h-full",
     "[id]": "formFieldControl.id()",

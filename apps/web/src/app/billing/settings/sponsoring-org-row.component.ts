@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule, formatDate } from "@angular/common";
-import { Component, EventEmitter, Input, Output, OnInit } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { firstValueFrom, map, Observable, switchMap } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -28,6 +35,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "[sponsoring-org-row]",
   templateUrl: "sponsoring-org-row.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, I18nPipe, TableModule, IconButtonModule, MenuModule, IconModule],
 })
 export class SponsoringOrgRowComponent implements OnInit {

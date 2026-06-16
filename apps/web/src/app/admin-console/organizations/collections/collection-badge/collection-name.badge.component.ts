@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { CollectionView } from "@bitwarden/common/admin-console/models/collections";
 import { uuidAsString } from "@bitwarden/common/platform/abstractions/sdk/sdk.service";
@@ -14,6 +14,7 @@ import { GetCollectionNameFromIdPipe } from "../pipes";
 @Component({
   selector: "app-collection-badge",
   templateUrl: "collection-name-badge.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, GetCollectionNameFromIdPipe],
 })
 export class CollectionNameBadgeComponent {

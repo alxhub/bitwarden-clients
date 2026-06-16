@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -28,6 +28,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
   selector: "confirm-key-connector-domain",
   templateUrl: "confirm-key-connector-domain.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, ButtonModule, I18nPipe, BitActionDirective, IconButtonModule],
 })
 export class ConfirmKeyConnectorDomainComponent implements OnInit {

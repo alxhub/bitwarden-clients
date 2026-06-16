@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, computed, input, signal } from "@angular/core";
+import { Component, computed, input, signal, ChangeDetectionStrategy } from "@angular/core";
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
 import { toSignal } from "@angular/core/rxjs-interop";
 import { fromEvent, map, startWith } from "rxjs";
@@ -30,6 +30,7 @@ import { OrgIconDirective } from "../../components/org-icon.directive";
 @Component({
   selector: "app-item-details-v2",
   templateUrl: "item-details-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

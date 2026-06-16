@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ApplicationHealthReportDetailEnriched } from "@bitwarden/bit-common/dirt/reports/risk-insights";
@@ -19,6 +19,7 @@ export type ApplicationTableDataSource = ApplicationHealthReportDetailEnriched &
 @Component({
   selector: "app-table-row-scrollable",
   imports: [CommonModule, JslibModule, TableModule, SharedModule, PipesModule, MenuModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./app-table-row-scrollable.component.html",
 })
 export class AppTableRowScrollableComponent {

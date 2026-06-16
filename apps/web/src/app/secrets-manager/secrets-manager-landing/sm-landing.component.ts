@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -17,6 +17,7 @@ import { SharedModule } from "../../shared/shared.module";
 @Component({
   selector: "app-sm-landing",
   imports: [SharedModule, SearchModule, NoItemsModule, HeaderModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "sm-landing.component.html",
 })
 export class SMLandingComponent implements OnInit {

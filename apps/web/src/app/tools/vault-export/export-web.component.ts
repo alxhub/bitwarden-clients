@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { ExportComponent } from "@bitwarden/vault-export-ui";
@@ -10,6 +10,7 @@ import { SharedModule } from "../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "export-web.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, ExportComponent, HeaderModule],
 })
 export class ExportWebComponent {

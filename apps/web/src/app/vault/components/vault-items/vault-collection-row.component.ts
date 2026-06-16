@@ -1,6 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, EventEmitter, HostListener, Input, Output, ViewChild } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import {
   CollectionAdminView,
@@ -28,6 +36,7 @@ import { RowHeightClass } from "./vault-items.component";
 @Component({
   selector: "tr[appVaultCollectionRow]",
   templateUrl: "vault-collection-row.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VaultCollectionRowComponent<C extends CipherViewLike> {

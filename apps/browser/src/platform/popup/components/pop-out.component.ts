@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -12,6 +12,7 @@ import BrowserPopupUtils from "../../browser/browser-popup-utils";
 @Component({
   selector: "app-pop-out",
   templateUrl: "pop-out.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, IconButtonModule],
 })
 export class PopOutComponent implements OnInit {

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule, CurrencyPipe, Location } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { PremiumComponent as BasePremiumComponent } from "@bitwarden/angular/billing/components/premium.component";
@@ -32,6 +32,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
 @Component({
   selector: "app-premium",
   templateUrl: "premium-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CardComponent,

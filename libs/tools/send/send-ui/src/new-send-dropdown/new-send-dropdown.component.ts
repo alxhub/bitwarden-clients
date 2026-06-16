@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -16,6 +16,7 @@ import { ButtonModule, ButtonType, MenuModule } from "@bitwarden/components";
 @Component({
   selector: "tools-new-send-dropdown",
   templateUrl: "new-send-dropdown.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [JslibModule, CommonModule, ButtonModule, RouterLink, MenuModule, PremiumBadgeComponent],
 })
 export class NewSendDropdownComponent implements OnInit {

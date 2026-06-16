@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormArray, FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -17,6 +17,7 @@ import { SharedModule } from "../shared";
 @Component({
   selector: "app-domain-rules",
   templateUrl: "domain-rules.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, HeaderModule],
 })
 export class DomainRulesComponent implements OnInit {

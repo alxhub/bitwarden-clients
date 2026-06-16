@@ -2,7 +2,7 @@
 // @ts-strict-ignore
 import { BooleanInput, coerceBooleanProperty } from "@angular/cdk/coercion";
 import { CommonModule } from "@angular/common";
-import { Component, Input, Signal, inject } from "@angular/core";
+import { Component, Input, Signal, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -21,6 +21,7 @@ import { PopupPageComponent } from "./popup-page.component";
 @Component({
   selector: "popup-header",
   templateUrl: "popup-header.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [TypographyModule, CommonModule, IconButtonModule, JslibModule, AsyncActionsModule],
 })
 export class PopupHeaderComponent {

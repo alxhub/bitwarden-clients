@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -23,6 +23,7 @@ export interface RegistrationStartSecondaryComponentData {
 @Component({
   selector: "auth-registration-start-secondary",
   templateUrl: "./registration-start-secondary.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, RouterModule, LinkModule],
 })
 export class RegistrationStartSecondaryComponent implements OnInit {

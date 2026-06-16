@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Observable } from "rxjs";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -21,6 +21,7 @@ import { OrganizationResellerRenewalWarning } from "../types";
       </bit-banner>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BannerModule, SharedModule],
 })
 export class OrganizationResellerRenewalWarningComponent implements OnInit {

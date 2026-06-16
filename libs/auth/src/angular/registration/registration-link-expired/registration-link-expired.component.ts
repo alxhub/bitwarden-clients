@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { Subject, firstValueFrom } from "rxjs";
 
@@ -24,6 +24,7 @@ export interface RegistrationLinkExpiredComponentData {
 @Component({
   selector: "auth-registration-link-expired",
   templateUrl: "./registration-link-expired.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, RouterModule, SvgModule, ButtonModule],
 })
 export class RegistrationLinkExpiredComponent implements OnInit, OnDestroy {

@@ -5,7 +5,9 @@
   class="tw-flex tw-flex-col"
   #container
 >
-  <vault-carousel-content [content]="slides.get(selectedIndex)?.content"></vault-carousel-content>
+  <vault-carousel-content
+    [content]="$safeNavigationMigration(slides.get(selectedIndex)?.content)"
+  ></vault-carousel-content>
   <div class="tw-w-full tw-flex tw-justify-between tw-mt-auto tw-px-4 tw-pb-2 tw-pt-4">
     <span class="tw-size-6">
       @if (!hideArrows()) {

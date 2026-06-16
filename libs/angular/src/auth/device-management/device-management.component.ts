@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, OnInit, viewChild } from "@angular/core";
+import { Component, DestroyRef, OnInit, viewChild, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { firstValueFrom } from "rxjs";
 
@@ -65,6 +65,7 @@ export interface DeviceDisplayData {
   standalone: true,
   selector: "auth-device-management",
   templateUrl: "./device-management.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CommonModule,

@@ -4,7 +4,7 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { A11yModule } from "@angular/cdk/a11y";
 import { OverlayModule, ConnectedPosition } from "@angular/cdk/overlay";
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { combineLatest, firstValueFrom, map, Observable, switchMap } from "rxjs";
 
@@ -39,6 +39,7 @@ type InactiveAccount = ActiveAccount & {
   selector: "app-account-switcher-v2",
   templateUrl: "account-switcher-v2.component.html",
   imports: [CommonModule, OverlayModule, A11yModule, I18nPipe, AvatarModule, IconButtonModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   animations: [
     trigger("transformPanel", [
       state(

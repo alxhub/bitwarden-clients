@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ButtonModule, DialogModule, DialogService, ItemModule } from "@bitwarden/components";
 import {
@@ -12,6 +12,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "credential-generator",
   templateUrl: "credential-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DialogModule, ButtonModule, I18nPipe, GeneratorModule, ItemModule],
 })
 export class CredentialGeneratorComponent {

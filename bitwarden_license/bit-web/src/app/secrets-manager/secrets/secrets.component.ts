@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { combineLatestWith, firstValueFrom, Observable, startWith, switchMap } from "rxjs";
 
@@ -44,6 +44,7 @@ import { SecretService } from "./secret.service";
 @Component({
   selector: "sm-secrets",
   templateUrl: "./secrets.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SecretsComponent implements OnInit {

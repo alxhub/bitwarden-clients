@@ -1,5 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Inject, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -51,6 +59,7 @@ export interface WebAuthnResult {
     FormsModule,
     IconModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [],
 })
 export class TwoFactorAuthWebAuthnComponent implements OnInit, OnDestroy {

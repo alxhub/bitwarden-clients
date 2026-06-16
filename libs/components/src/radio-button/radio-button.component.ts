@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, input } from "@angular/core";
+import { booleanAttribute, Component, inject, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { FormControlGroupComponent } from "../form-control/form-control-group.component";
 import { FormControlModule } from "../form-control/form-control.module";
@@ -17,6 +17,7 @@ let nextId = 0;
   selector: "bit-radio-button",
   templateUrl: "radio-button.component.html",
   imports: [FormControlModule, RadioInputComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     "[id]": "id()",
     class: "[&_bit-hint]:tw-mt-0",

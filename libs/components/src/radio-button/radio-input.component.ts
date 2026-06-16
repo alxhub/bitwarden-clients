@@ -7,6 +7,7 @@ import {
   input,
   Optional,
   Self,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { NgControl, Validators } from "@angular/forms";
 
@@ -22,6 +23,7 @@ let nextId = 0;
   selector: "input[type=radio][bitRadio]",
   template: "",
   providers: [{ provide: BitFormControlAbstraction, useExisting: RadioInputComponent }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     "[id]": "this.id()",
     "[checked]": "isGroupChecked()",

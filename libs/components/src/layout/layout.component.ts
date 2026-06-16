@@ -12,6 +12,7 @@ import {
   input,
   signal,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
@@ -47,6 +48,7 @@ const SIDERAIL_WIDTH_REM = 4;
     CdkTrapFocus,
     ScrollLayoutHostDirective,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     "(document:keydown.tab)": "handleKeydown($event)",
     class: "tw-block tw-h-screen",

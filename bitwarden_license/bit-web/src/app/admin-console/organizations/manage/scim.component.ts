@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { UntypedFormBuilder, FormControl } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -23,6 +23,7 @@ import { ScimApiKeyDialogComponent } from "./scim-api-key-dialog.component";
 @Component({
   selector: "app-org-manage-scim",
   templateUrl: "scim.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ScimComponent implements OnInit {

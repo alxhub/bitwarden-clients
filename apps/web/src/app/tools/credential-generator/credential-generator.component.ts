@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ButtonModule, DialogService, LinkModule } from "@bitwarden/components";
 import {
@@ -14,6 +14,7 @@ import { SharedModule } from "../../shared";
 @Component({
   selector: "credential-generator",
   templateUrl: "credential-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, HeaderModule, GeneratorModule, ButtonModule, LinkModule],
 })
 export class CredentialGeneratorComponent {

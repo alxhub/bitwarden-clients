@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { PluralizePipe } from "@bitwarden/angular/pipes/pluralize.pipe";
 import { ButtonModule, DialogConfig, DialogModule, DialogService } from "@bitwarden/components";
@@ -17,6 +17,7 @@ import {
 @Component({
   standalone: true,
   templateUrl: "./assign-collections-desktop.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AssignCollectionsComponent, PluralizePipe, DialogModule, ButtonModule, I18nPipe],
 })
 export class AssignCollectionsDesktopComponent {

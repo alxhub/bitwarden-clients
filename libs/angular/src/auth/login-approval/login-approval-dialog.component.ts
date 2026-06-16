@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit, OnDestroy, Inject } from "@angular/core";
+import { Component, OnInit, OnDestroy, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -36,6 +36,7 @@ export interface LoginApprovalDialogParams {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "login-approval-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AsyncActionsModule, ButtonModule, CommonModule, DialogModule, IconModule, JslibModule],
 })
 export class LoginApprovalDialogComponent implements OnInit, OnDestroy {

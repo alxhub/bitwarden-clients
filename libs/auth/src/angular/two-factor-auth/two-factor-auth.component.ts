@@ -7,6 +7,7 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
@@ -97,6 +98,7 @@ import {
     TwoFactorAuthYubikeyComponent,
     TwoFactorAuthWebAuthnComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     {
       provide: TwoFactorAuthComponentCacheService,

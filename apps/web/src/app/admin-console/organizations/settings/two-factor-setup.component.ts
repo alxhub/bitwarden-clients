@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { concatMap, takeUntil, map, lastValueFrom, firstValueFrom } from "rxjs";
 import { first, tap } from "rxjs/operators";
@@ -32,6 +32,7 @@ import { TwoFactorVerifyComponent } from "../../../auth/settings/two-factor/two-
 @Component({
   selector: "app-two-factor-setup",
   templateUrl: "../../../auth/settings/two-factor/two-factor-setup.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent implements OnInit {

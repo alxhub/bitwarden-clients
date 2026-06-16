@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -25,6 +25,7 @@ export type DecryptionFailureDialogParams = {
 @Component({
   selector: "vault-decryption-failure-dialog",
   templateUrl: "./decryption-failure-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DialogModule,
     CommonModule,

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { NgClass } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 import {
@@ -18,6 +18,7 @@ import { GetOrgNameFromIdPipe, OrganizationNameBadgeComponent } from "@bitwarden
 @Component({
   selector: "tr[appVaultCollectionRow]",
   templateUrl: "vault-collection-row.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     TableModule,
     LinkModule,

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
@@ -24,6 +24,7 @@ import { serviceAccountAccessGuard } from "./service-account-access.guard";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class GuardedRouteTestComponent {}
@@ -32,6 +33,7 @@ export class GuardedRouteTestComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class RedirectTestComponent {}

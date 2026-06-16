@@ -1,7 +1,16 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { NgClass } from "@angular/common";
-import { Component, HostListener, computed, inject, input, output, viewChild } from "@angular/core";
+import {
+  Component,
+  HostListener,
+  computed,
+  inject,
+  input,
+  output,
+  viewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { PremiumBadgeComponent } from "@bitwarden/angular/billing/components/premium-badge/premium-badge.component";
 import { IconComponent } from "@bitwarden/angular/vault/components/icon.component";
@@ -41,6 +50,7 @@ interface CopyFieldConfig {
 @Component({
   selector: "tr[appVaultCipherRow]",
   templateUrl: "vault-cipher-row.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     NgClass,
     I18nPipe,

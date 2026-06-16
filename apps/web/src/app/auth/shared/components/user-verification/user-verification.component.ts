@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from "@angular/animations";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
 import { UserVerificationComponent as BaseComponent } from "@bitwarden/angular/auth/components/user-verification.component";
@@ -25,6 +25,7 @@ import { UserVerificationComponent as BaseComponent } from "@bitwarden/angular/a
       transition(":enter", [style({ opacity: 0 }), animate("100ms", style({ opacity: 1 }))]),
     ]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class UserVerificationComponent extends BaseComponent {}

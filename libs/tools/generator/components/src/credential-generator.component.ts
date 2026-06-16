@@ -10,6 +10,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import {
@@ -95,6 +96,7 @@ const NONE_SELECTED = "none";
 @Component({
   selector: "tools-credential-generator",
   templateUrl: "credential-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ToggleGroupModule,
     NudgeGeneratorSpotlightComponent,

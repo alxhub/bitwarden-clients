@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 
 /**
  * Basic skeleton loading component that can be used to represent content that is loading.
@@ -16,6 +16,7 @@ import { Component, input } from "@angular/core";
   selector: "bit-skeleton",
   templateUrl: "./skeleton.component.html",
   imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: "tw-block",
   },

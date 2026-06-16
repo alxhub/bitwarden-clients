@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, Output, EventEmitter, output } from "@angular/core";
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { ReactiveFormsModule, FormsModule, FormControl } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -31,6 +38,7 @@ import {
     AsyncActionsModule,
     FormsModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [],
 })
 export class TwoFactorAuthAuthenticatorComponent {

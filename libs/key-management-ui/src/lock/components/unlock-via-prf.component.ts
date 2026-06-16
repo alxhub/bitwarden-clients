@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit, input, output } from "@angular/core";
+import { Component, OnInit, input, output, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -17,6 +17,7 @@ import { WebAuthnPrfUnlockService } from "../services/webauthn-prf-unlock.servic
   selector: "bit-unlock-via-prf",
   standalone: true,
   imports: [CommonModule, JslibModule, ButtonModule, AsyncActionsModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     @if (isAvailable) {
       @if (formButton()) {

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit, signal } from "@angular/core";
+import { Component, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Router, RouterModule } from "@angular/router";
 import {
@@ -81,6 +81,7 @@ import { AwaitDesktopDialogComponent } from "./await-desktop-dialog.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "account-security.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CardComponent,
     CheckboxModule,

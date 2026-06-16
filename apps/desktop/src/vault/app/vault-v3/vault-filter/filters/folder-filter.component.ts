@@ -1,4 +1,4 @@
-import { Component, input, computed, output } from "@angular/core";
+import { Component, input, computed, output, ChangeDetectionStrategy } from "@angular/core";
 
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import { IconButtonModule, NavigationModule, A11yTitleDirective } from "@bitwarden/components";
@@ -10,6 +10,7 @@ import { VaultFilter, FolderFilter } from "@bitwarden/vault";
 @Component({
   selector: "app-folder-filter",
   templateUrl: "folder-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [A11yTitleDirective, NavigationModule, IconButtonModule, I18nPipe],
 })
 export class FolderFilterComponent {

@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Inject, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { firstValueFrom, map } from "rxjs";
 
@@ -38,6 +45,7 @@ import { TwoFactorSetupMethodBaseComponent } from "./two-factor-setup-method-bas
 @Component({
   selector: "app-two-factor-setup-email",
   templateUrl: "two-factor-setup-email.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

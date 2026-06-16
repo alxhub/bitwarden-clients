@@ -1,5 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, inject, input, OnInit, signal } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  inject,
+  input,
+  OnInit,
+  signal,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import {
   FormControl,
@@ -63,6 +71,7 @@ import { SessionTimeoutInputComponent } from "./session-timeout-input.component"
 @Component({
   selector: "bit-session-timeout-settings",
   templateUrl: "session-timeout-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CheckboxModule,
     CommonModule,

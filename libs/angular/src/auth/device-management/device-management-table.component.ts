@@ -7,6 +7,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -32,6 +33,7 @@ import { recentlyActiveSortFn } from "./utils/device-sort.utils";
   standalone: true,
   selector: "auth-device-management-table",
   templateUrl: "./device-management-table.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     BadgeModule,
     ButtonModule,

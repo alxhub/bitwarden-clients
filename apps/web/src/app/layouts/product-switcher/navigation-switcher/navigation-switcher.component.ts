@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { map, Observable } from "rxjs";
 
 import { ProductSwitcherItem, ProductSwitcherService } from "../shared/product-switcher.service";
@@ -8,6 +8,7 @@ import { ProductSwitcherItem, ProductSwitcherService } from "../shared/product-s
 @Component({
   selector: "navigation-product-switcher",
   templateUrl: "./navigation-switcher.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class NavigationProductSwitcherComponent {

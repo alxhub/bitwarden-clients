@@ -1,6 +1,6 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { NgClass } from "@angular/common";
-import { Component, HostBinding, OnInit, input } from "@angular/core";
+import { Component, HostBinding, OnInit, input, ChangeDetectionStrategy } from "@angular/core";
 
 import type { SortDirection, SortFn } from "./table-data-source";
 import { TableComponent } from "./table.component";
@@ -20,6 +20,7 @@ import { TableComponent } from "./table.component";
       <i class="bwi tw-ms-2" [ngClass]="icon"></i>
     </button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NgClass],
 })
 export class SortableComponent implements OnInit {

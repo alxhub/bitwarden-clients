@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -21,6 +21,7 @@ export type AddExtensionLaterDialogData = {
 @Component({
   selector: "vault-add-extension-later-dialog",
   templateUrl: "./add-extension-later-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DialogModule, JslibModule, TypographyModule, ButtonComponent, RouterModule],
 })
 export class AddExtensionLaterDialogComponent implements OnInit {

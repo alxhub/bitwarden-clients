@@ -8,6 +8,7 @@ import {
   input,
   model,
   signal,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
 
@@ -39,6 +40,7 @@ let nextId = 0;
     "[attr.aria-disabled]": "this.disabled",
   },
   hostDirectives: [AriaDisableDirective],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IconComponent],
 })
 export class SwitchComponent implements ControlValueAccessor, BitFormControlAbstraction {

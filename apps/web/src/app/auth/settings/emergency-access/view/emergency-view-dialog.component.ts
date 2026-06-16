@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { EMPTY, Observable } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -39,6 +39,7 @@ class PremiumUpgradePromptNoop implements PremiumUpgradePromptService {
   selector: "app-emergency-view-dialog",
   templateUrl: "emergency-view-dialog.component.html",
   imports: [ButtonModule, CipherViewComponent, DialogModule, CommonModule, JslibModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: ViewPasswordHistoryService, useClass: VaultViewPasswordHistoryService },
     { provide: PremiumUpgradePromptService, useClass: PremiumUpgradePromptNoop },

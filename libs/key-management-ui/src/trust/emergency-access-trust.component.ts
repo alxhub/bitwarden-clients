@@ -1,6 +1,6 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { CommonModule } from "@angular/common";
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -30,6 +30,7 @@ type EmergencyAccessTrustDialogData = {
 @Component({
   selector: "emergency-access-trust",
   templateUrl: "emergency-access-trust.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, switchMap } from "rxjs";
@@ -40,6 +40,7 @@ export interface EntityEventsDialogParams {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   imports: [SharedModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "entity-events.component.html",
 })
 export class EntityEventsComponent implements OnInit, OnDestroy {

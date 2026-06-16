@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { NEVER, switchMap } from "rxjs";
 
@@ -30,6 +30,7 @@ import { TruncatedFilenameComponent } from "../../components/truncated-filename"
 @Component({
   selector: "app-attachments-v2-view",
   templateUrl: "attachments-v2-view.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

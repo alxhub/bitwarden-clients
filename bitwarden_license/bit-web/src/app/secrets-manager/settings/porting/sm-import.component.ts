@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
@@ -23,6 +23,7 @@ import { SecretsManagerPortingApiService } from "../services/sm-porting-api.serv
 @Component({
   selector: "sm-import",
   templateUrl: "./sm-import.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SecretsManagerImportComponent implements OnInit, OnDestroy {

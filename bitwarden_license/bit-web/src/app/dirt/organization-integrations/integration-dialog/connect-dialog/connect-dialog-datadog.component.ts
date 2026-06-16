@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 
 import { DatadogConfiguration } from "@bitwarden/bit-common/dirt/organization-integrations/models/configuration/datadog-configuration";
@@ -28,6 +28,7 @@ export interface DatadogConnectDialogResult {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./connect-dialog-datadog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class ConnectDatadogDialogComponent implements OnInit {

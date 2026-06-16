@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   first,
   lastValueFrom,
@@ -52,6 +52,7 @@ import { TwoFactorVerifyComponent } from "./two-factor-verify.component";
 @Component({
   selector: "app-two-factor-setup",
   templateUrl: "two-factor-setup.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ItemModule, HeaderModule, PremiumBadgeComponent, TwoFactorIconComponent, SharedModule],
 })
 export class TwoFactorSetupComponent implements OnInit, OnDestroy {

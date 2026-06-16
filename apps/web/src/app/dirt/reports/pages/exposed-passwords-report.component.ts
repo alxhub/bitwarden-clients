@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -26,6 +26,7 @@ type ReportResult = CipherView & { exposedXTimes: number };
 @Component({
   selector: "app-exposed-passwords-report",
   templateUrl: "exposed-passwords-report.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ExposedPasswordsReportComponent extends CipherReportComponent implements OnInit {

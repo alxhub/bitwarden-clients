@@ -15,6 +15,7 @@ import {
   signal,
   AfterViewInit,
   NgZone,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { combineLatest, switchMap } from "rxjs";
@@ -76,6 +77,7 @@ export const drawerSizeToWidthRem: Record<string, number> = {
     CdkScrollable,
     SpinnerComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   hostDirectives: [{ directive: AutofocusFallbackDirective }],
 })
 export class DialogComponent implements AfterViewInit {

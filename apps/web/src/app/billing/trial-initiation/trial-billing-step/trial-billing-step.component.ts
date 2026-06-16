@@ -1,4 +1,13 @@
-import { Component, computed, input, OnDestroy, OnInit, output, ViewChild } from "@angular/core";
+import {
+  Component,
+  computed,
+  input,
+  OnDestroy,
+  OnInit,
+  output,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { FormControl, FormGroup } from "@angular/forms";
 import {
@@ -46,6 +55,7 @@ export interface OrganizationCreatedEvent {
 @Component({
   selector: "app-trial-billing-step",
   templateUrl: "./trial-billing-step.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     EnterPaymentMethodComponent,
     EnterBillingAddressComponent,

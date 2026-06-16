@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, computed, input, inject } from "@angular/core";
+import { Component, computed, input, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { DisplayMode } from "@bitwarden/angular/vault/vault-filter/models/display-mode";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -19,6 +19,7 @@ import { OrganizationFilter, VaultFilter, VaultFilterServiceAbstraction } from "
 @Component({
   selector: "app-organization-filter",
   templateUrl: "organization-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [A11yTitleDirective, NavigationModule, I18nPipe, IconModule],
 })
 export class OrganizationFilterComponent {

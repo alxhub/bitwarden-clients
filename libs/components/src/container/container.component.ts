@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 /**
  * bit-container is a minimally styled component that limits the max width of its content to the tailwind theme variable '4xl'. '4xl' is equal to the value of 56rem
@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "bit-container",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "container.component.html",
 })
 export class ContainerComponent {}

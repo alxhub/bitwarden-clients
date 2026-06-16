@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
   combineLatest,
   firstValueFrom,
@@ -44,6 +44,7 @@ import { OptionsInput } from "../shared/components/vault-filter-section.componen
 @Component({
   selector: "app-organization-options",
   templateUrl: "organization-options.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OrganizationOptionsComponent implements OnInit, OnDestroy {

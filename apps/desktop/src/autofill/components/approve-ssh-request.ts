@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 import {
@@ -27,6 +27,7 @@ export interface ApproveSshRequestParams {
 @Component({
   selector: "app-approve-ssh-request",
   templateUrl: "approve-ssh-request.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     DialogModule,
     CommonModule,

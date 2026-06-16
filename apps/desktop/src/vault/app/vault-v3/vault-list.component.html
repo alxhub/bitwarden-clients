@@ -80,12 +80,12 @@
     </bit-table>
   </div>
   @if (isEmpty()) {
-    <bit-no-items [icon]="emptyStateItem()?.icon">
+    <bit-no-items [icon]="$safeNavigationMigration(emptyStateItem()?.icon)">
       <div slot="title">
-        {{ emptyStateItem()?.title | i18n }}
+        {{ $safeNavigationMigration(emptyStateItem()?.title) | i18n }}
       </div>
       <p slot="description" bitTypography="body2" class="tw-max-w-md tw-text-center">
-        {{ emptyStateItem()?.description | i18n }}
+        {{ $safeNavigationMigration(emptyStateItem()?.description) | i18n }}
       </p>
       @if (showAddCipherBtn()) {
         <vault-new-cipher-menu

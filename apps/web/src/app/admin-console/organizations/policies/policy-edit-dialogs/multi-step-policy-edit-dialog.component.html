@@ -7,7 +7,7 @@
   [subtitle]="policySteps()[currentStep()]?.titleContent?.() ? undefined : (policy.name | i18n)"
 >
   <ng-container bitDialogTitle>
-    @let title = policySteps()[currentStep()]?.titleContent?.();
+    @let title = $safeNavigationMigration(policySteps()[currentStep()]?.titleContent?.());
     @if (title) {
       <ng-container [ngTemplateOutlet]="title"></ng-container>
     }
@@ -18,7 +18,7 @@
       <p bitTypography="body1">{{ policy.description | i18n }}</p>
     }
 
-    @let bodyTemplate = policySteps()[currentStep()]?.bodyContent?.();
+    @let bodyTemplate = $safeNavigationMigration(policySteps()[currentStep()]?.bodyContent?.());
     @if (bodyTemplate) {
       <ng-container [ngTemplateOutlet]="bodyTemplate"></ng-container>
     }
@@ -27,7 +27,7 @@
   </ng-container>
 
   <ng-container bitDialogFooter>
-    @let footerTemplate = policySteps()[currentStep()]?.footerContent?.();
+    @let footerTemplate = $safeNavigationMigration(policySteps()[currentStep()]?.footerContent?.());
     @if (footerTemplate) {
       <ng-container [ngTemplateOutlet]="footerTemplate"></ng-container>
     } @else {

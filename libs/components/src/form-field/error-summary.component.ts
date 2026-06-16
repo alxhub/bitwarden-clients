@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 import { AbstractControl, UntypedFormGroup } from "@angular/forms";
 
 import { I18nPipe } from "@bitwarden/ui-common";
@@ -14,6 +14,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
     class: "tw-block tw-text-danger tw-mt-2",
     "aria-live": "assertive",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [I18nPipe],
 })
 export class BitErrorSummaryComponent {

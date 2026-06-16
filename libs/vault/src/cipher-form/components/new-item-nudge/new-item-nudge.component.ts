@@ -1,5 +1,5 @@
 import { AsyncPipe } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 import { toObservable } from "@angular/core/rxjs-interop";
 import { combineLatest, firstValueFrom, of, switchMap } from "rxjs";
 
@@ -16,6 +16,7 @@ import { CipherType } from "@bitwarden/sdk-internal";
 @Component({
   selector: "vault-new-item-nudge",
   templateUrl: "./new-item-nudge.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CalloutModule, AsyncPipe],
 })
 export class NewItemNudgeComponent {

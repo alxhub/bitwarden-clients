@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { combineLatest, firstValueFrom, Subject, takeUntil } from "rxjs";
 
@@ -83,6 +83,7 @@ export enum DeleteOrganizationDialogResult {
 @Component({
   selector: "app-delete-organization",
   imports: [SharedModule, UserVerificationModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "delete-organization-dialog.component.html",
 })
 export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {

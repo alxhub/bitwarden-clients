@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject, OnInit, ViewChild } from "@angular/core";
+import { Component, Inject, OnInit, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { BehaviorSubject, combineLatest, firstValueFrom, map } from "rxjs";
 
 import {
@@ -54,6 +54,7 @@ export type EmergencyAccessTakeoverDialogResultType =
 @Component({
   selector: "auth-emergency-access-takeover-dialog",
   templateUrl: "./emergency-access-takeover-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CalloutModule,

@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -105,6 +105,7 @@ type LoadAction =
     CalloutModule,
     ChipActionComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: ViewPasswordHistoryService, useClass: BrowserViewPasswordHistoryService },
     { provide: PremiumUpgradePromptService, useClass: BrowserPremiumUpgradePromptService },

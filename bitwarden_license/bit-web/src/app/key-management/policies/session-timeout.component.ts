@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import {
   BehaviorSubject,
@@ -43,6 +43,7 @@ const DEFAULT_MINUTES = 0;
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "session-timeout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class SessionTimeoutPolicyComponent

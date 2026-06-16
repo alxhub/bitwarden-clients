@@ -1,4 +1,12 @@
-import { Component, computed, inject, signal, Signal, WritableSignal } from "@angular/core";
+import {
+  Component,
+  computed,
+  inject,
+  signal,
+  Signal,
+  WritableSignal,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { FormControl } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
@@ -79,6 +87,7 @@ interface BulkMemberFlags {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "members.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MembersComponent {

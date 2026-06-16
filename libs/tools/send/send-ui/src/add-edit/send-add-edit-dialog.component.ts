@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, computed, Inject, signal, viewChild } from "@angular/core";
+import {
+  Component,
+  computed,
+  Inject,
+  signal,
+  viewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -71,6 +78,7 @@ export type SendItemDialogResult = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "send-add-edit-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     SearchModule,

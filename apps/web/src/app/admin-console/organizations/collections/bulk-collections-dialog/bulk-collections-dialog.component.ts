@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject, OnDestroy } from "@angular/core";
+import { Component, Inject, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { combineLatest, of, Subject, switchMap, takeUntil } from "rxjs";
 
@@ -55,6 +55,7 @@ export enum BulkCollectionsDialogResult {
 @Component({
   imports: [SharedModule, AccessSelectorModule],
   selector: "app-bulk-collections-dialog",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "bulk-collections-dialog.component.html",
 })
 export class BulkCollectionsDialogComponent implements OnDestroy {

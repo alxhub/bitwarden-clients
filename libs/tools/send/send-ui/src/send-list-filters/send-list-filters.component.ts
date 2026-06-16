@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy } from "@angular/core";
+import { Component, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { Observable, of, switchMap } from "rxjs";
 
@@ -15,6 +15,7 @@ import { SendListFiltersService } from "../services/send-list-filters.service";
 @Component({
   selector: "app-send-list-filters",
   templateUrl: "./send-list-filters.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, ChipFilterComponent, ReactiveFormsModule],
 })
 export class SendListFiltersComponent implements OnDestroy {

@@ -8,6 +8,7 @@ import {
   TemplateRef,
   input,
   contentChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -26,6 +27,7 @@ export class TableBodyDirective {
 @Component({
   selector: "bit-table",
   templateUrl: "./table.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule],
 })
 export class TableComponent implements OnDestroy, AfterContentChecked {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
 import { filter, firstValueFrom, map } from "rxjs";
@@ -25,6 +25,7 @@ import { VaultBannersService, VisibleVaultBanner } from "./services/vault-banner
     BannerModule,
     OrganizationFreeTrialWarningComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [VaultBannersService],
 })
 export class VaultBannersComponent implements OnInit {

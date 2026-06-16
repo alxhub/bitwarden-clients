@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Subject, from, map, of, pairwise, startWith, switchMap, takeUntil, tap } from "rxjs";
 
@@ -30,6 +37,7 @@ import { SelfHostedEnvConfigDialogComponent } from "../../self-hosted-env-config
 @Component({
   selector: "auth-registration-env-selector",
   templateUrl: "registration-env-selector.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, ReactiveFormsModule, FormFieldModule, SelectModule],
 })
 export class RegistrationEnvSelectorComponent implements OnInit, OnDestroy {

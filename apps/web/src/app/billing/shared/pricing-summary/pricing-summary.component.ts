@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { PlanInterval } from "@bitwarden/common/billing/enums";
@@ -36,6 +36,7 @@ export interface PricingSummaryData {
 @Component({
   selector: "app-pricing-summary",
   templateUrl: "./pricing-summary.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class PricingSummaryComponent {

@@ -1,6 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, computed, inject, input, InjectionToken, Injector, Input } from "@angular/core";
+import {
+  Component,
+  computed,
+  inject,
+  input,
+  InjectionToken,
+  Injector,
+  Input,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { firstValueFrom, Observable } from "rxjs";
 import { map, switchMap } from "rxjs/operators";
@@ -23,6 +32,7 @@ import { CoachmarkService } from "../../../../components/coachmark";
 @Component({
   selector: "app-filter-section",
   templateUrl: "vault-filter-section.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class VaultFilterSectionComponent {

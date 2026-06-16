@@ -1,4 +1,13 @@
-import { Component, computed, inject, input, OnDestroy, OnInit, output } from "@angular/core";
+import {
+  Component,
+  computed,
+  inject,
+  input,
+  OnDestroy,
+  OnInit,
+  output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { firstValueFrom, Subject, takeUntil } from "rxjs";
 
@@ -30,6 +39,7 @@ import { UnlockViaPrfComponent } from "../unlock-via-prf.component";
 @Component({
   selector: "bit-master-password-lock",
   templateUrl: "master-password-lock.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
     ReactiveFormsModule,

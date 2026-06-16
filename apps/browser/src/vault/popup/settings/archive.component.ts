@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
 import { combineLatest, firstValueFrom, map, Observable, startWith, switchMap } from "rxjs";
@@ -50,6 +50,7 @@ import { ROUTES_AFTER_EDIT_DELETION } from "../services/vault-popup-after-deleti
 @Component({
   templateUrl: "archive.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

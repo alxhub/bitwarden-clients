@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -28,6 +28,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
   selector: "km-ui-remove-password",
   templateUrl: "remove-password.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, ButtonModule, I18nPipe, BitActionDirective, IconButtonModule],
 })
 export class RemovePasswordComponent implements OnInit {

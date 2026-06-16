@@ -9,6 +9,7 @@ import {
   OnDestroy,
   SimpleChanges,
   OnChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { skip, takeUntil, Subject, map, withLatestFrom, ReplaySubject, tap } from "rxjs";
@@ -51,6 +52,7 @@ const Controls = Object.freeze({
 @Component({
   selector: "tools-passphrase-settings",
   templateUrl: "passphrase-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     SectionComponent,
     SectionHeaderComponent,

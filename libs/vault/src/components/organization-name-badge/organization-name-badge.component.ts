@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input, OnChanges } from "@angular/core";
+import { Component, Input, OnChanges, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -14,6 +14,7 @@ import { OrganizationId } from "@bitwarden/sdk-internal";
 @Component({
   selector: "app-org-badge",
   templateUrl: "organization-name-badge.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [RouterModule, JslibModule, ChipActionComponent],
 })
 export class OrganizationNameBadgeComponent implements OnChanges {

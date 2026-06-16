@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ProviderUserBulkRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-bulk.request";
@@ -22,6 +22,7 @@ type BulkRemoveDialogParams = {
   templateUrl:
     "../../../../../../../../apps/web/src/app/admin-console/organizations/members/components/bulk/bulk-remove-dialog.component.html",
   selector: "provider-bulk-remove-dialog",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkRemoveDialogComponent extends BaseBulkRemoveComponent {

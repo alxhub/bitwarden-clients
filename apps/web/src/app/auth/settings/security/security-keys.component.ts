@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom, map } from "rxjs";
 
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
@@ -21,6 +21,7 @@ import { ApiKeyComponent } from "./api-key.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "security-keys.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, ChangeKdfModule, KeyRotationComponent],
 })
 export class SecurityKeysComponent implements OnInit {

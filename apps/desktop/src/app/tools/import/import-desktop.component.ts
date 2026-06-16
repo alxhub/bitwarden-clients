@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogRef, AsyncActionsModule, ButtonModule, DialogModule } from "@bitwarden/components";
@@ -26,6 +26,7 @@ import { DesktopImportMetadataService } from "./desktop-import-metadata.service"
     ButtonModule,
     ImportComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     ...ImporterProviders,
     safeProvider({

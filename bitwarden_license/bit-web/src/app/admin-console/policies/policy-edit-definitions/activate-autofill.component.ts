@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { of } from "rxjs";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -29,6 +29,7 @@ export class ActivateAutofillPolicy extends BasePolicyEditDefinition {
 @Component({
   selector: "activate-autofill-policy-edit",
   templateUrl: "activate-autofill.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class ActivateAutofillPolicyComponent extends BasePolicyEditComponent {}

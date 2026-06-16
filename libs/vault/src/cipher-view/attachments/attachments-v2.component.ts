@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, HostListener, Inject } from "@angular/core";
+import { Component, HostListener, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherId, OrganizationId } from "@bitwarden/common/types/guid";
@@ -47,6 +47,7 @@ export interface AttachmentDialogCloseResult {
 @Component({
   selector: "app-vault-attachments-v2",
   templateUrl: "attachments-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ButtonModule, CommonModule, DialogModule, I18nPipe, CipherAttachmentsComponent],
 })
 export class AttachmentsV2Component {

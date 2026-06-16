@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { provideRouter } from "@angular/router";
 import { RouterTestingHarness } from "@angular/router/testing";
@@ -22,6 +22,7 @@ import { isPaidOrgGuard } from "./is-paid-org.guard";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "<h1>This is the home screen!</h1>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class HomescreenComponent {}
@@ -30,6 +31,7 @@ export class HomescreenComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "<h1>This component can only be accessed by a paid organization!</h1>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class PaidOrganizationOnlyComponent {}
@@ -38,6 +40,7 @@ export class PaidOrganizationOnlyComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "<h1>This is the organization upgrade screen!</h1>",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OrganizationUpgradeScreenComponent {}

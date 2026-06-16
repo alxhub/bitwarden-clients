@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -24,6 +24,7 @@ import { SmLandingApiService } from "./sm-landing-api.service";
 @Component({
   selector: "app-request-sm-access",
   templateUrl: "request-sm-access.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, SearchModule, NoItemsModule, HeaderModule, OssModule],
 })
 export class RequestSMAccessComponent implements OnInit {

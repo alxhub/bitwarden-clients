@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -36,6 +36,7 @@ import { PopupPageComponent } from "../../../../platform/popup/layout/popup-page
     PopupHeaderComponent,
     PopOutComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     ...ImporterProviders,
     safeProvider({

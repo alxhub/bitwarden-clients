@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { Router, RouterLink } from "@angular/router";
 import { map, Observable } from "rxjs";
@@ -31,6 +31,7 @@ export interface NewItemInitialValues {
 @Component({
   selector: "app-new-item-dropdown",
   templateUrl: "new-item-dropdown.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NoItemsModule, JslibModule, CommonModule, ButtonModule, RouterLink, MenuModule],
 })
 export class NewItemDropdownComponent implements OnInit {

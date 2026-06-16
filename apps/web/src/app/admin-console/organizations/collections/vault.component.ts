@@ -1,4 +1,12 @@
-import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, NavigationExtras, Params, Router } from "@angular/router";
 import {
@@ -155,6 +163,7 @@ enum AddAccessStatusType {
     OrganizationFreeTrialWarningComponent,
     OrganizationResellerRenewalWarningComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     RoutedVaultFilterService,
     RoutedVaultFilterBridgeService,

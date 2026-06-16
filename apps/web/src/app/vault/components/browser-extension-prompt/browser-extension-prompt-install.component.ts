@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { map } from "rxjs";
 
 import { DeviceType } from "@bitwarden/common/enums";
@@ -30,6 +30,7 @@ const WebStoreUrls: Partial<Record<DeviceType, string>> = {
 @Component({
   selector: "vault-browser-extension-prompt-install",
   templateUrl: "./browser-extension-prompt-install.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, I18nPipe, LinkModule],
 })
 export class BrowserExtensionPromptInstallComponent implements OnInit {

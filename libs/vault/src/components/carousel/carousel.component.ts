@@ -17,6 +17,7 @@ import {
   QueryList,
   ViewChild,
   ViewChildren,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
@@ -33,6 +34,7 @@ import { VaultCarouselSlideComponent } from "./carousel-slide/carousel-slide.com
 @Component({
   selector: "vault-carousel",
   templateUrl: "./carousel.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CdkPortalOutlet,
     CommonModule,

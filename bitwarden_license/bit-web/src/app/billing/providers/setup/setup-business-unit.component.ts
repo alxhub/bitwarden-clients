@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 import { filter, map, switchMap } from "rxjs/operators";
@@ -21,6 +21,7 @@ import { BaseAcceptComponent } from "@bitwarden/web-vault/app/common/base.accept
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./setup-business-unit.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SetupBusinessUnitComponent extends BaseAcceptComponent {

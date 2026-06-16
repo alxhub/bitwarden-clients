@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Params } from "@angular/router";
 
 import { BitwardenLogo } from "@bitwarden/assets/svg";
@@ -9,6 +9,7 @@ import { BaseAcceptComponent } from "@bitwarden/web-vault/app/common/base.accept
 @Component({
   selector: "app-setup-provider",
   templateUrl: "setup-provider.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SetupProviderComponent extends BaseAcceptComponent {

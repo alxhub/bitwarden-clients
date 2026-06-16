@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, computed, input, resource } from "@angular/core";
+import { Component, computed, input, resource, ChangeDetectionStrategy } from "@angular/core";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { combineLatest, of, switchMap, map, catchError, from, Observable, startWith } from "rxjs";
 
@@ -56,6 +56,7 @@ import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-ide
 @Component({
   selector: "app-cipher-view",
   templateUrl: "cipher-view.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CalloutModule,
     CommonModule,

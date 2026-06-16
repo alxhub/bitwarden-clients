@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -9,6 +9,7 @@ import { LinkModule, PopoverModule } from "@bitwarden/components";
 @Component({
   selector: "vault-permit-cipher-details-popover",
   templateUrl: "./permit-cipher-details-popover.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [PopoverModule, JslibModule, LinkModule],
 })
 export class PermitCipherDetailsPopoverComponent {

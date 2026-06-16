@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, DestroyRef, inject } from "@angular/core";
+import { Component, DestroyRef, inject, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { combineLatest, lastValueFrom, map } from "rxjs";
 
@@ -49,6 +49,7 @@ import { DesktopHeaderComponent } from "../../layout/header";
       useClass: DesktopPremiumUpgradePromptService,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./send.component.html",
 })
 export class SendComponent {

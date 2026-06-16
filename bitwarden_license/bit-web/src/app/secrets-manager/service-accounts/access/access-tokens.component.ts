@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import {
   combineLatestWith,
@@ -29,6 +29,7 @@ import { AccessTokenCreateDialogComponent } from "./dialogs/access-token-create-
 @Component({
   selector: "sm-access-tokens",
   templateUrl: "./access-tokens.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AccessTokenComponent implements OnInit, OnDestroy {

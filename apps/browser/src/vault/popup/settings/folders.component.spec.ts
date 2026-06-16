@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { mock } from "jest-mock-extended";
@@ -25,6 +25,7 @@ import { FoldersComponent } from "./folders.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "popup-header",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<ng-content></ng-content>`,
 })
 class MockPopupHeaderComponent {
@@ -40,6 +41,7 @@ class MockPopupHeaderComponent {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "popup-footer",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<ng-content></ng-content>`,
 })
 class MockPopupFooterComponent {

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import {
@@ -22,6 +22,7 @@ export class DisablePersonalVaultExportPolicy extends BasePolicyEditDefinition {
 @Component({
   selector: "disable-personal-vault-export-policy-edit",
   templateUrl: "disable-personal-vault-export.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class DisablePersonalVaultExportPolicyComponent extends BasePolicyEditComponent {}

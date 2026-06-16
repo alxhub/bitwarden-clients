@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy } from "@angular/core";
+import { Component, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, map, Subject } from "rxjs";
 
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
@@ -27,6 +27,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
   selector: "environment-selector",
   templateUrl: "environment-selector.component.html",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, I18nPipe, IconModule, LinkModule, MenuModule, TypographyModule],
 })
 export class EnvironmentSelectorComponent implements OnDestroy {

@@ -1,7 +1,7 @@
 <button
   type="button"
   bitIconButton="bwi-grid"
-  [bitMenuTriggerFor]="content?.menu"
+  [bitMenuTriggerFor]="$safeNavigationMigration(content?.menu)"
   [buttonType]="buttonType"
   [label]="'switchProducts' | i18n"
   *ngIf="products$ | async"

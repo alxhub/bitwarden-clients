@@ -8,6 +8,7 @@ import {
   NgZone,
   OnDestroy,
   OnInit,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
@@ -68,6 +69,7 @@ import { DesktopSyncVerificationDialogComponent } from "./components/desktop-syn
   styles: [],
   animations: [routerTransition],
   templateUrl: "app.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppComponent implements OnInit, OnDestroy {

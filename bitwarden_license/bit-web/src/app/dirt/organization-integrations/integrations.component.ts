@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { IntegrationStateService } from "@bitwarden/bit-common/dirt/organization-integrations/shared/integration-state.service";
 import { IntegrationType } from "@bitwarden/common/enums/integration-type.enum";
@@ -10,6 +10,7 @@ import { SharedModule } from "@bitwarden/web-vault/app/shared";
 @Component({
   selector: "ac-integrations",
   templateUrl: "./integrations.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, HeaderModule],
 })
 export class AdminConsoleIntegrationsComponent {

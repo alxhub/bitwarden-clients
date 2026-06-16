@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -26,6 +26,7 @@ import { PopupPageComponent } from "../../../../platform/popup/layout/popup-page
 @Component({
   selector: "app-send-created",
   templateUrl: "./send-created.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ButtonModule,
     CommonModule,

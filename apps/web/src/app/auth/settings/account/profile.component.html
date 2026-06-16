@@ -36,7 +36,7 @@
         </button>
       </div>
       <div *ngIf="managingOrganization$ | async as managingOrganization">
-        {{ "accountIsOwnedMessage" | i18n: managingOrganization?.name }}
+        {{ "accountIsOwnedMessage" | i18n: $safeNavigationMigration(managingOrganization?.name) }}
         <a
           target="_blank"
           rel="noopener noreferrer"

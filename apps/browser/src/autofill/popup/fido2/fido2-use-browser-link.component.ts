@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -18,6 +18,7 @@ import { BrowserFido2UserInterfaceSession } from "../../fido2/services/browser-f
 @Component({
   selector: "app-fido2-use-browser-link",
   templateUrl: "fido2-use-browser-link.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, MenuModule],
 })
 export class Fido2UseBrowserLinkComponent {

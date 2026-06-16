@@ -1,4 +1,4 @@
-import { Component, HostBinding, input } from "@angular/core";
+import { Component, HostBinding, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
@@ -10,6 +10,7 @@ let nextId = 0;
 @Component({
   selector: "bit-error",
   template: `<i class="bwi bwi-error"></i> {{ displayError }}`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: "tw-block tw-mt-1 tw-text-danger tw-text-xs",
     "aria-live": "assertive",

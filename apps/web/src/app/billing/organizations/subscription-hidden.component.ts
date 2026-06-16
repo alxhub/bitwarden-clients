@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { GearIcon } from "@bitwarden/assets/svg";
 
@@ -15,6 +15,7 @@ import { GearIcon } from "@bitwarden/assets/svg";
     <p class="tw-font-medium">{{ "billingManagedByProvider" | i18n: providerName }}</p>
     <p>{{ "billingContactProviderForAssistance" | i18n }}</p>
   </div>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SubscriptionHiddenComponent {

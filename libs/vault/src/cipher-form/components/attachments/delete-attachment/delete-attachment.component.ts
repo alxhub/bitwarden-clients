@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -22,6 +22,7 @@ import {
 @Component({
   selector: "app-delete-attachment",
   templateUrl: "./delete-attachment.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AsyncActionsModule, CommonModule, JslibModule, ButtonModule, IconButtonModule],
 })
 export class DeleteAttachmentComponent {

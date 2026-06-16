@@ -1,5 +1,5 @@
 import { AsyncPipe } from "@angular/common";
-import { Component, input, inject } from "@angular/core";
+import { Component, input, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { CipherViewLike } from "@bitwarden/common/vault/utils/cipher-view-like-utils";
 import { VaultItemCopyActionsComponent } from "@bitwarden/vault";
@@ -11,6 +11,7 @@ import { VaultPopupCopyButtonsService } from "../../../services/vault-popup-copy
 @Component({
   selector: "app-item-copy-actions",
   templateUrl: "item-copy-actions.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [VaultItemCopyActionsComponent, AsyncPipe],
 })
 export class ItemCopyActionsComponent {

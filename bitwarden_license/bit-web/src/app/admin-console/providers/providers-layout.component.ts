@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { combineLatest, map, Observable, Subject, switchMap } from "rxjs";
 import { takeUntil } from "rxjs/operators";
@@ -26,6 +26,7 @@ import { ProviderWarningsService } from "../../billing/providers/warnings/servic
 @Component({
   selector: "providers-layout",
   templateUrl: "providers-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     RouterModule,

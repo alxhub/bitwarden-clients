@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Params, Router, RouterModule } from "@angular/router";
 import { Subject, firstValueFrom } from "rxjs";
 
@@ -43,6 +43,7 @@ type MarketingInitiative = (typeof MarketingInitiative)[keyof typeof MarketingIn
 @Component({
   selector: "auth-registration-finish",
   templateUrl: "./registration-finish.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, JslibModule, RouterModule, InputPasswordComponent, IconModule],
 })
 export class RegistrationFinishComponent implements OnInit, OnDestroy {

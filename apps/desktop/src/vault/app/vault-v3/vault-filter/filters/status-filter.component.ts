@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, viewChild, input, inject } from "@angular/core";
+import { Component, viewChild, input, inject, ChangeDetectionStrategy } from "@angular/core";
 import { combineLatest, firstValueFrom, map, switchMap } from "rxjs";
 
 import { PremiumBadgeComponent } from "@bitwarden/angular/billing/components/premium-badge";
@@ -18,6 +18,7 @@ import { VaultFilter, CipherStatus, CipherTypeFilter } from "@bitwarden/vault";
 @Component({
   selector: "app-status-filter",
   templateUrl: "status-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, A11yTitleDirective, NavigationModule, PremiumBadgeComponent, I18nPipe],
 })
 export class StatusFilterComponent {

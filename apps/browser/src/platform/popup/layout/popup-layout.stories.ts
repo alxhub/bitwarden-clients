@@ -1,6 +1,6 @@
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
-import { Component, importProvidersFrom } from "@angular/core";
+import { Component, importProvidersFrom, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
@@ -43,6 +43,7 @@ import { PopupTabNavigationComponent } from "./popup-tab-navigation.component";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "extension-container",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="tw-h-[640px] tw-w-[480px] tw-border tw-border-solid tw-border-secondary-300">
       <ng-content></ng-content>
@@ -60,6 +61,7 @@ class ExtensionContainerComponent {}
       <ng-content></ng-content>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 class ExtensionPoppedContainerComponent {}
@@ -93,6 +95,7 @@ class ExtensionPoppedContainerComponent {}
       </bit-item-group>
     </bit-section>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, ItemModule, ChipActionComponent, IconButtonModule, SectionComponent],
 })
 class VaultComponent {
@@ -109,6 +112,7 @@ class VaultComponent {
       Add
     </button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ButtonModule],
 })
 class MockAddButtonComponent {}
@@ -120,6 +124,7 @@ class MockAddButtonComponent {}
   template: `
     <button bitIconButton="bwi-popout" size="small" type="button" label="Pop out"></button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IconButtonModule],
 })
 class MockPopoutButtonComponent {}
@@ -133,6 +138,7 @@ class MockPopoutButtonComponent {}
       <bit-avatar text="Ash Ketchum"></bit-avatar>
     </button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AvatarModule],
 })
 class MockCurrentAccountComponent {}
@@ -142,6 +148,7 @@ class MockCurrentAccountComponent {}
 @Component({
   selector: "mock-search",
   template: ` <bit-search placeholder="Search"> </bit-search> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SearchModule],
 })
 class MockSearchComponent {}
@@ -153,6 +160,7 @@ class MockSearchComponent {}
   template: `
     <bit-banner variant="primary"> This is an important note about these ciphers </bit-banner>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [BannerModule],
 })
 class MockBannerComponent {}
@@ -174,6 +182,7 @@ class MockBannerComponent {}
       <vault-placeholder></vault-placeholder>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,
@@ -201,6 +210,7 @@ class MockVaultPageComponent {}
       <vault-placeholder></vault-placeholder>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,
@@ -227,6 +237,7 @@ class MockVaultPagePoppedComponent {}
       <div class="tw-text-main">Generator content here</div>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,
@@ -253,6 +264,7 @@ class MockGeneratorPageComponent {}
       <div class="tw-text-main">Send content here</div>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,
@@ -279,6 +291,7 @@ class MockSendPageComponent {}
       <div class="tw-text-main">Settings content here</div>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,
@@ -314,6 +327,7 @@ class MockSettingsPageComponent {}
       </popup-footer>
     </popup-page>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     PopupPageComponent,
     PopupHeaderComponent,

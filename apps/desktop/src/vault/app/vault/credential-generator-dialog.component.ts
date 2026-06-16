@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { UnionOfValues } from "@bitwarden/common/vault/types/union-of-values";
@@ -45,6 +45,7 @@ type CredentialGeneratorDialogAction = UnionOfValues<typeof CredentialGeneratorD
 @Component({
   selector: "credential-generator-dialog",
   templateUrl: "credential-generator-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     A11yTitleDirective,
     CipherFormGeneratorComponent,

@@ -1,6 +1,14 @@
 import { FocusableOption } from "@angular/cdk/a11y";
 import { CommonModule } from "@angular/common";
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { CarouselIcon } from "@bitwarden/assets/svg";
 import { SvgModule } from "@bitwarden/components";
@@ -12,6 +20,7 @@ import { VaultCarouselSlideComponent } from "../carousel-slide/carousel-slide.co
 @Component({
   selector: "vault-carousel-button",
   templateUrl: "carousel-button.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, SvgModule],
 })
 export class VaultCarouselButtonComponent implements FocusableOption {

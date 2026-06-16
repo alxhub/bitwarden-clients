@@ -1,4 +1,11 @@
-import { Component, EventEmitter, input, Input, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  input,
+  Input,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { lastValueFrom } from "rxjs";
 
 import { DialogService } from "@bitwarden/components";
@@ -71,6 +78,7 @@ import { ChangePaymentMethodDialogComponent } from "./change-payment-method-dial
     </bit-section>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class DisplayPaymentMethodComponent {

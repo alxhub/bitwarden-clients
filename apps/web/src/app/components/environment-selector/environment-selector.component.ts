@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 
 import {
@@ -17,6 +17,7 @@ import { SharedModule } from "../../shared";
 @Component({
   selector: "environment-selector",
   templateUrl: "environment-selector.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class EnvironmentSelectorComponent implements OnInit {

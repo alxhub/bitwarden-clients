@@ -82,7 +82,6 @@ describe("basic-lib generator", () => {
     expect(tree.exists(`libs/test/src/index.ts`)).toBeTruthy();
     expect(tree.exists(`libs/test/src/test.spec.ts`)).toBeTruthy();
   });
-});
 
 it("should update jest.config.js with new library", async () => {
   // Create a mock jest.config.js with existing libs
@@ -123,4 +122,5 @@ it("should handle missing jest.config.js file gracefully", async () => {
   await basicLibGenerator(tree, options);
   expect(consoleSpy).toHaveBeenCalledWith("jest.config.js file not found at root");
   consoleSpy.mockRestore();
+});
 });

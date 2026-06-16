@@ -9,6 +9,7 @@ import {
   input,
   output,
   viewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -44,6 +45,7 @@ import { SendDetailsComponent } from "./send-details/send-details.component";
   selector: "tools-send-form",
   templateUrl: "./send-form.component.html",
   providers: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     JslibModule,

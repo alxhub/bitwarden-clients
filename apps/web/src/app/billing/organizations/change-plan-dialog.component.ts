@@ -9,6 +9,7 @@ import {
   OnInit,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -109,6 +110,7 @@ interface OnSuccessArgs {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./change-plan-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     BillingSharedModule,
     EnterPaymentMethodComponent,

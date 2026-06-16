@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { lastValueFrom, Observable, firstValueFrom, switchMap, map } from "rxjs";
 
 import { PremiumBadgeComponent } from "@bitwarden/angular/billing/components/premium-badge";
@@ -46,6 +46,7 @@ import {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "emergency-access.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, HeaderModule, PremiumBadgeComponent],
 })
 export class EmergencyAccessComponent implements OnInit {

@@ -544,7 +544,11 @@
               {{ additionalServiceAccount }}
               {{ "serviceAccounts" | i18n | lowercase }}
               &times;
-              {{ selectedPlan?.SecretsManager?.additionalPricePerServiceAccount | currency: "$" }}
+              {{
+                $safeNavigationMigration(
+                  selectedPlan?.SecretsManager?.additionalPricePerServiceAccount
+                ) | currency: "$"
+              }}
               /{{ selectedPlanInterval | i18n }}
             </span>
             <span>{{ additionalServiceAccountTotal(selectedPlan) | currency: "$" }}</span>
@@ -679,7 +683,10 @@
               /{{ selectedPlanInterval | i18n }}
             </span>
             <span>
-              {{ secretsManagerSeatTotal(selectedPlan, sub?.smSeats) | currency: "$" }}
+              {{
+                secretsManagerSeatTotal(selectedPlan, $safeNavigationMigration(sub?.smSeats))
+                  | currency: "$"
+              }}
             </span>
           </p>
           <p
@@ -717,7 +724,8 @@
                 class="tw-line-through tw-text-xs"
                 >{{
                   additionalServiceAccountTotal(selectedPlan) +
-                    secretsManagerSeatTotal(selectedPlan, sub?.smSeats) | currency: "$"
+                    secretsManagerSeatTotal(selectedPlan, $safeNavigationMigration(sub?.smSeats))
+                    | currency: "$"
                 }}</span
               >
             </ng-container>
@@ -881,7 +889,10 @@
               /{{ selectedPlanInterval | i18n }}
             </span>
             <span>
-              {{ secretsManagerSeatTotal(selectedPlan, sub?.smSeats) | currency: "$" }}
+              {{
+                secretsManagerSeatTotal(selectedPlan, $safeNavigationMigration(sub?.smSeats))
+                  | currency: "$"
+              }}
             </span>
           </p>
           <p

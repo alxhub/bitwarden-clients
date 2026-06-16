@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -16,6 +16,7 @@ import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-
 @Component({
   selector: "app-view-identity-sections",
   templateUrl: "./view-identity-sections.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     JslibModule,
     SectionHeaderComponent,

@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { shareReplay } from "rxjs";
@@ -26,6 +33,7 @@ import { CustomFieldsComponent } from "../custom-fields/custom-fields.component"
 @Component({
   selector: "vault-additional-options-section",
   templateUrl: "./additional-options-section.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     SectionHeaderComponent,

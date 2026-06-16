@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { CreditCardIcon } from "@bitwarden/assets/svg";
 
@@ -9,6 +9,7 @@ import { CreditCardIcon } from "@bitwarden/assets/svg";
   template: `<bit-no-items [icon]="icon">
     <div slot="title">{{ "noInvoicesToList" | i18n }}</div>
   </bit-no-items>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class NoInvoicesComponent {

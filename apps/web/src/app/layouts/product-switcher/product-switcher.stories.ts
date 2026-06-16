@@ -1,4 +1,10 @@
-import { Component, Directive, importProvidersFrom, Input } from "@angular/core";
+import {
+  Component,
+  Directive,
+  importProvidersFrom,
+  Input,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { BehaviorSubject, Observable, of } from "rxjs";
@@ -109,6 +115,7 @@ class MockConfigService implements Partial<ConfigService> {
 @Component({
   selector: "story-layout",
   template: `<ng-content></ng-content>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class StoryLayoutComponent {}
@@ -118,6 +125,7 @@ class StoryLayoutComponent {}
 @Component({
   selector: "story-content",
   template: ``,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class StoryContentComponent {}

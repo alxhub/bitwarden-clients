@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { BitSvg } from "@bitwarden/assets/svg";
 
@@ -11,6 +11,7 @@ import { ReportVariant } from "../models/report-variant";
 @Component({
   selector: "app-report-card",
   templateUrl: "report-card.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ReportCardComponent {

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnDestroy } from "@angular/core";
+import { Component, inject, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { combineLatest, distinctUntilChanged, map, shareReplay } from "rxjs";
 
@@ -54,6 +54,7 @@ export type SendState = (typeof SendState)[keyof typeof SendState];
       useClass: BrowserPremiumUpgradePromptService,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CalloutModule,
     PopupPageComponent,

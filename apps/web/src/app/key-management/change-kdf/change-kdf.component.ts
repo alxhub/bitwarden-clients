@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Subject, firstValueFrom, takeUntil, Observable } from "rxjs";
 
@@ -22,6 +22,7 @@ import { ChangeKdfConfirmationComponent } from "./change-kdf-confirmation.compon
 @Component({
   selector: "app-change-kdf",
   templateUrl: "change-kdf.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ChangeKdfComponent implements OnInit, OnDestroy {

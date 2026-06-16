@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, inject, NgZone, ViewChild } from "@angular/core";
+import { Component, inject, NgZone, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { combineLatest, map, take } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -22,6 +22,7 @@ import { VaultSearchComponent } from "../vault-search/vault-search.component";
 @Component({
   selector: "app-vault-header",
   templateUrl: "vault-header.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     VaultSearchComponent,
     VaultListFiltersComponent,

@@ -14,6 +14,7 @@ import {
   Optional,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
@@ -112,6 +113,7 @@ import { ImportLastPassComponent } from "./lastpass";
     SectionComponent,
     LinkModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: ImporterProviders,
 })
 export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {

@@ -1,4 +1,10 @@
-import { Component, Directive, importProvidersFrom, Input } from "@angular/core";
+import {
+  Component,
+  Directive,
+  importProvidersFrom,
+  Input,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { provideNoopAnimations } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
@@ -116,6 +122,7 @@ class MockConfigService implements Partial<ConfigService> {
 @Component({
   selector: "story-content",
   template: ``,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class StoryContentComponent {}

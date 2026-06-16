@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -12,6 +12,7 @@ import { LinkModule } from "@bitwarden/components";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   imports: [CommonModule, JslibModule, LinkModule, RouterModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="tw-text-center" *ngIf="!(isUserRegistrationDisabled$ | async)">
       {{ "newToBitwarden" | i18n }}

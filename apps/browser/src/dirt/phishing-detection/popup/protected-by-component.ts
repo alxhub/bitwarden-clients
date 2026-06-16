@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ButtonModule, LinkModule } from "@bitwarden/components";
@@ -10,6 +10,7 @@ import { ButtonModule, LinkModule } from "@bitwarden/components";
   selector: "dirt-phishing-protected-by",
   standalone: true,
   templateUrl: "protected-by-component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, CommonModule, JslibModule, ButtonModule, LinkModule],
 })
 export class ProtectedByComponent {}

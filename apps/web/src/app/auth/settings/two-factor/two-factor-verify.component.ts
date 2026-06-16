@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 
 import { UserVerificationFormInputComponent } from "@bitwarden/auth/angular";
@@ -32,6 +32,7 @@ type TwoFactorVerifyDialogData = {
 @Component({
   selector: "app-two-factor-verify",
   templateUrl: "two-factor-verify.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

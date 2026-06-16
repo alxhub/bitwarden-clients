@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import {
   FormControl,
@@ -99,6 +99,7 @@ describe("SwitchComponent", () => {
         </bit-form-control>
       `,
       imports: [SwitchComponent, BitLabelComponent, FormControlModule],
+      changeDetection: ChangeDetectionStrategy.Eager,
     })
     class TestSelectedHostComponent {
       checked = false;

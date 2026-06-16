@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, computed, inject, OnInit, Signal } from "@angular/core";
+import {
+  Component,
+  computed,
+  inject,
+  OnInit,
+  Signal,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterModule } from "@angular/router";
 import { map, Observable, switchMap } from "rxjs";
@@ -27,6 +34,7 @@ import { WebLayoutModule } from "./web-layout.module";
 @Component({
   selector: "app-user-layout",
   templateUrl: "user-layout.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     RouterModule,

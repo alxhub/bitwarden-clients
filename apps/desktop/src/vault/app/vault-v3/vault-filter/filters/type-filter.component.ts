@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, input, inject } from "@angular/core";
+import { Component, input, inject, ChangeDetectionStrategy } from "@angular/core";
 import { combineLatest, map, shareReplay } from "rxjs";
 
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -16,6 +16,7 @@ import { VaultFilter, CipherTypeFilter } from "@bitwarden/vault";
 @Component({
   selector: "app-type-filter",
   templateUrl: "type-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, A11yTitleDirective, NavigationModule, I18nPipe],
 })
 export class TypeFilterComponent {

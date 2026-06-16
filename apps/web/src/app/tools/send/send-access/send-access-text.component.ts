@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -15,6 +15,7 @@ import { SharedModule } from "../../../shared";
 @Component({
   selector: "app-send-access-text",
   templateUrl: "send-access-text.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, IconModule],
 })
 export class SendAccessTextComponent {

@@ -27,7 +27,10 @@
               </span>
             </p>
             <div>
-              <small>{{ "thirdPartyServerMessage" | i18n: data.serverConfig.server?.name }}</small>
+              <small>{{
+                "thirdPartyServerMessage"
+                  | i18n: $safeNavigationMigration(data.serverConfig.server?.name)
+              }}</small>
             </div>
           </ng-container>
 

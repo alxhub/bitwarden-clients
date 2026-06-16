@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, switchMap } from "rxjs";
 
@@ -24,6 +24,7 @@ import { EventExportService } from "@bitwarden/web-vault/app/tools/event-export"
 @Component({
   selector: "provider-events",
   templateUrl: "events.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class EventsComponent extends BaseEventsComponent implements OnInit {

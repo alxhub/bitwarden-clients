@@ -1,5 +1,5 @@
 import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -34,6 +34,7 @@ const DEFAULT_COLOR: Record<SimpleDialogType, string> = {
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "./simple-configurable-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ReactiveFormsModule,
     BitSubmitDirective,

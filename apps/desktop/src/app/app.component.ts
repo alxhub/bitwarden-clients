@@ -9,6 +9,7 @@ import {
   Type,
   ViewChild,
   ViewContainerRef,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
@@ -111,6 +112,7 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
     <bit-toast-container></bit-toast-container>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppComponent implements OnInit, OnDestroy {

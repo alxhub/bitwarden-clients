@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { EventCollectionService, EventType } from "@bitwarden/common/dirt/event-logs";
@@ -29,6 +36,7 @@ import { VaultAutosizeReadOnlyTextArea } from "../../directives/readonly-textare
 @Component({
   selector: "app-custom-fields-v2",
   templateUrl: "custom-fields-v2.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

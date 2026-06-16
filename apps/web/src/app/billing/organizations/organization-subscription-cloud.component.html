@@ -24,7 +24,9 @@
             bitBadge
             variant="success"
             class="tw-inline-flex tw-items-center"
-            >{{ "providerDiscount" | i18n: customerDiscount?.percentOff }}</span
+            >{{
+              "providerDiscount" | i18n: $safeNavigationMigration(customerDiscount?.percentOff)
+            }}</span
           >
         </strong>
         <bit-table>

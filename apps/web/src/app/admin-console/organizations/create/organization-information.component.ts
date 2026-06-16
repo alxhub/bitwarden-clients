@@ -1,6 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { UntypedFormGroup } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -11,6 +18,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 @Component({
   selector: "app-org-info",
   templateUrl: "organization-information.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OrganizationInformationComponent implements OnInit {

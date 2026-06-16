@@ -1,7 +1,7 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { UnionOfValues } from "@bitwarden/common/vault/types/union-of-values";
@@ -39,6 +39,7 @@ type WebVaultGeneratorDialogAction = UnionOfValues<typeof WebVaultGeneratorDialo
 @Component({
   selector: "web-vault-generator-dialog",
   templateUrl: "./web-generator-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, CipherFormGeneratorComponent, ButtonModule, DialogModule, I18nPipe],
 })
 export class WebVaultGeneratorDialogComponent {

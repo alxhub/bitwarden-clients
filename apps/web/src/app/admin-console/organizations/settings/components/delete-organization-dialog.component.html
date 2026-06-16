@@ -2,7 +2,10 @@
   <span bitDialogTitle>{{ "deleteOrganization" | i18n }}</span>
   <div bitDialogContent>
     <bit-callout type="warning">
-      {{ "deletingOrganizationIsPermanentWarning" | i18n: organization?.name }}
+      {{
+        "deletingOrganizationIsPermanentWarning"
+          | i18n: $safeNavigationMigration(organization?.name)
+      }}
     </bit-callout>
     <p id="organizationDeleteDescription">
       <ng-container
@@ -12,7 +15,10 @@
       </ng-container>
       <ng-template #regularDelete>
         <ng-container *ngIf="organizationContentSummary.totalItemCount > 0">
-          {{ "deletingOrganizationContentWarning" | i18n: organization?.name }}
+          {{
+            "deletingOrganizationContentWarning"
+              | i18n: $safeNavigationMigration(organization?.name)
+          }}
           <ul>
             <li *ngFor="let type of organizationContentSummary.itemCountByType">
               {{ type.count }} {{ type.localizationKey | i18n }}

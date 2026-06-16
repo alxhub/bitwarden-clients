@@ -159,7 +159,7 @@ function updateJestConfig(tree: Tree, directory: string, name: string) {
       foundLibsSection = true;
 
       // Extract the lib name for comparison
-      const match = line.match(/"<rootDir>libs([^"]+)/);
+      const match = line.match(/"<rootDir>\/libs\/([^"]+)/);
       if (match) {
         const existingLibName = match[1];
 

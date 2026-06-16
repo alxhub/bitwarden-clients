@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, NgZone } from "@angular/core";
+import { Component, NgZone, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
 import {
@@ -25,6 +25,7 @@ import { VaultPopupLoadingService } from "../../../services/vault-popup-loading.
 @Component({
   imports: [CommonModule, SearchModule, JslibModule, FormsModule],
   selector: "app-vault-search",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "vault-search.component.html",
 })
 export class VaultSearchComponent {

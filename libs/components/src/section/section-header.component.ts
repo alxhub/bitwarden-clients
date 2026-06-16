@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { TypographyModule } from "../typography";
 
@@ -8,6 +8,7 @@ import { TypographyModule } from "../typography";
   selector: "bit-section-header",
   templateUrl: "./section-header.component.html",
   imports: [TypographyModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class:
       // apply bottom and x padding when a `bit-card` or `bit-item` is the immediate sibling, or nested in the immediate sibling

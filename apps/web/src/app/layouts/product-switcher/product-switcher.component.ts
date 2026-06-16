@@ -1,4 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input } from "@angular/core";
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { ButtonType } from "@bitwarden/components";
 
@@ -8,6 +14,7 @@ import { ProductSwitcherService } from "./shared/product-switcher.service";
 @Component({
   selector: "product-switcher",
   templateUrl: "./product-switcher.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProductSwitcherComponent implements AfterViewInit {

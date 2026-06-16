@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { AppComponent as BaseAppComponent } from "@bitwarden/web-vault/app/app.component";
 
@@ -7,6 +7,7 @@ import { AppComponent as BaseAppComponent } from "@bitwarden/web-vault/app/app.c
 @Component({
   selector: "app-root",
   templateUrl: "../../../../apps/web/src/app/app.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppComponent extends BaseAppComponent {}

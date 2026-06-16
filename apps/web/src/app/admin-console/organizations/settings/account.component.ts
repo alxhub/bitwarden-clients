@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
@@ -43,6 +43,7 @@ import { DeleteOrganizationDialogResult, openDeleteOrganizationDialog } from "./
 @Component({
   selector: "app-org-account",
   templateUrl: "account.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AccountComponent implements OnInit, OnDestroy {

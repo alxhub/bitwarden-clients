@@ -7,6 +7,7 @@ import {
   Output,
   signal,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { combineLatest, firstValueFrom, map, Subject, takeUntil } from "rxjs";
@@ -76,6 +77,7 @@ interface OnSuccessArgs {
 @Component({
   selector: "app-trial-payment-dialog",
   templateUrl: "./trial-payment-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TrialPaymentDialogComponent implements OnInit, OnDestroy {

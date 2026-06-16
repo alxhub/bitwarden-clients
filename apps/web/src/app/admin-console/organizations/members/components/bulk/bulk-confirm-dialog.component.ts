@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { firstValueFrom, map, Observable, switchMap } from "rxjs";
 
@@ -37,6 +37,7 @@ type BulkConfirmDialogParams = {
 @Component({
   templateUrl: "bulk-confirm-dialog.component.html",
   selector: "member-bulk-comfirm-dialog",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BulkConfirmDialogComponent extends BaseBulkConfirmComponent {

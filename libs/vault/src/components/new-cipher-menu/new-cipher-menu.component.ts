@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, input, output } from "@angular/core";
+import { Component, input, output, ChangeDetectionStrategy } from "@angular/core";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { combineLatest, map, shareReplay } from "rxjs";
 
@@ -23,6 +23,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "vault-new-cipher-menu",
   templateUrl: "new-cipher-menu.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ButtonModule, CommonModule, MenuModule, PopoverModule, I18nPipe, JslibModule],
 })
 export class NewCipherMenuComponent {

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit, viewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, viewChild, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { Router, RouterModule } from "@angular/router";
 import { firstValueFrom, map, switchMap } from "rxjs";
@@ -44,6 +44,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
     PremiumBadgeComponent,
     SpinnerComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: PremiumUpgradePromptService, useClass: BrowserPremiumUpgradePromptService },
   ],

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { Router, provideRouter } from "@angular/router";
 import { RouterTestingHarness } from "@angular/router/testing";
@@ -15,6 +15,7 @@ import { deepLinkGuard } from "./deep-link.guard";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class GuardedRouteTestComponent {}
@@ -23,6 +24,7 @@ export class GuardedRouteTestComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class LockTestComponent {}
@@ -31,6 +33,7 @@ export class LockTestComponent {}
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class RedirectTestComponent {}

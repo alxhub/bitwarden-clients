@@ -1,7 +1,15 @@
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, effect, inject, OnDestroy, OnInit } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  effect,
+  inject,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Router, RouterModule } from "@angular/router";
 import {
@@ -116,6 +124,7 @@ type VaultState = UnionOfValues<typeof VaultState>;
     VaultFadeInOutSkeletonComponent,
     VaultFadeInOutComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [{ provide: VaultItemsTransferService, useClass: DefaultVaultItemsTransferService }],
 })
 export class VaultComponent implements OnInit, OnDestroy {

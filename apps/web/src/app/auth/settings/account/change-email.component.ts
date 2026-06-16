@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { firstValueFrom } from "rxjs";
 
@@ -20,6 +20,7 @@ import { SharedModule } from "../../../shared";
 @Component({
   selector: "app-change-email",
   templateUrl: "change-email.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule],
 })
 export class ChangeEmailComponent implements OnInit {

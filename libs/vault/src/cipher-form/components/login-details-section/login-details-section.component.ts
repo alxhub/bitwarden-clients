@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { DatePipe } from "@angular/common";
-import { Component, DestroyRef, inject, OnInit, Optional } from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  Optional,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { map } from "rxjs";
@@ -34,6 +41,7 @@ import { AutofillOptionsComponent } from "../autofill-options/autofill-options.c
 @Component({
   selector: "vault-login-details-section",
   templateUrl: "./login-details-section.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ReactiveFormsModule,
     SectionHeaderComponent,

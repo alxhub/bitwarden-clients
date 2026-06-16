@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 
 import {
@@ -20,6 +20,7 @@ import { SharedModule } from "../../shared";
 @Component({
   templateUrl: "import-web.component.html",
   imports: [SharedModule, ImportComponent, HeaderModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     ...ImporterProviders,
     safeProvider({

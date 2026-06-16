@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { combineLatest, map, Observable, startWith } from "rxjs";
 
@@ -27,6 +27,7 @@ import { VaultListItemsContainerComponent } from "../vault-list-items-container/
     SimplifiedAutofillInfoComponent,
   ],
   selector: "app-autofill-vault-list-items",
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "autofill-vault-list-items.component.html",
 })
 export class AutofillVaultListItemsComponent {

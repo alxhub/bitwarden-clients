@@ -1,6 +1,15 @@
 import { CdkTrapFocus } from "@angular/cdk/a11y";
 import { CommonModule } from "@angular/common";
-import { Component, computed, DestroyRef, input, OnInit, output, signal } from "@angular/core";
+import {
+  Component,
+  computed,
+  DestroyRef,
+  input,
+  OnInit,
+  output,
+  signal,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { catchError, of } from "rxjs";
 
@@ -44,6 +53,7 @@ export type UpgradeAccountResult = {
     PricingCardComponent,
     CdkTrapFocus,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./upgrade-account.component.html",
 })
 export class UpgradeAccountComponent implements OnInit {

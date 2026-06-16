@@ -1,4 +1,4 @@
-import { Component, booleanAttribute, input } from "@angular/core";
+import { Component, booleanAttribute, input, ChangeDetectionStrategy } from "@angular/core";
 
 import { MappedOptionComponent } from "./option";
 
@@ -6,6 +6,7 @@ import { MappedOptionComponent } from "./option";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "bit-option",
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<ng-template><ng-content></ng-content></ng-template>`,
 })
 export class OptionComponent<T = unknown> implements MappedOptionComponent<T> {

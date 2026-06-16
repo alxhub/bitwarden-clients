@@ -1,6 +1,6 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 
 import { GeneratorModule } from "@bitwarden/generator-components";
 import { AlgorithmInfo, GeneratedCredential } from "@bitwarden/generator-core";
@@ -14,6 +14,7 @@ import { AlgorithmInfo, GeneratedCredential } from "@bitwarden/generator-core";
 @Component({
   selector: "vault-cipher-form-generator",
   templateUrl: "./cipher-form-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, GeneratorModule],
 })
 export class CipherFormGeneratorComponent {

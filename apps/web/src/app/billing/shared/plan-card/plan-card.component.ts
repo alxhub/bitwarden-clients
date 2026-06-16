@@ -1,4 +1,4 @@
-import { Component, input, output } from "@angular/core";
+import { Component, input, output, ChangeDetectionStrategy } from "@angular/core";
 
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 
@@ -16,6 +16,7 @@ export interface PlanCard {
 @Component({
   selector: "app-plan-card",
   templateUrl: "./plan-card.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class PlanCardComponent {

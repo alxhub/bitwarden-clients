@@ -8,6 +8,7 @@ import {
   OnInit,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { firstValueFrom, Observable } from "rxjs";
 
@@ -41,6 +42,7 @@ import { RowHeightClass } from "./vault-items.component";
   selector: "tr[appVaultCipherRow]",
   templateUrl: "vault-cipher-row.component.html",
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: { class: "tw-group/cipher-row" },
 })
 export class VaultCipherRowComponent<C extends CipherViewLike> implements OnInit {

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Inject, ViewChild } from "@angular/core";
+import { Component, Inject, ViewChild, ChangeDetectionStrategy } from "@angular/core";
 import { switchMap } from "rxjs";
 
 import { InputPasswordComponent, InputPasswordFlow } from "@bitwarden/auth/angular";
@@ -79,6 +79,7 @@ export type AccountRecoveryDialogResultType =
   standalone: true,
   selector: "app-account-recovery-dialog",
   templateUrl: "account-recovery-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     ButtonModule,

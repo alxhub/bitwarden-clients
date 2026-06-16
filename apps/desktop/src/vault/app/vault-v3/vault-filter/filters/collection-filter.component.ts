@@ -1,4 +1,4 @@
-import { Component, input, computed } from "@angular/core";
+import { Component, input, computed, ChangeDetectionStrategy } from "@angular/core";
 
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import { NavigationModule, A11yTitleDirective } from "@bitwarden/components";
@@ -9,6 +9,7 @@ import { VaultFilter, CollectionFilter } from "@bitwarden/vault";
 @Component({
   selector: "app-collection-filter",
   templateUrl: "collection-filter.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [A11yTitleDirective, NavigationModule],
 })
 export class CollectionFilterComponent {

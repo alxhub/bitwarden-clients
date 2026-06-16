@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { firstValueFrom, switchMap } from "rxjs";
 
@@ -24,6 +24,7 @@ import { AtRiskPasswordCalloutData, AtRiskPasswordCalloutService } from "@bitwar
     JslibModule,
   ],
   providers: [AtRiskPasswordCalloutService],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./at-risk-password-callout.component.html",
 })
 export class AtRiskPasswordCalloutComponent {

@@ -9,6 +9,7 @@ import {
   OnDestroy,
   SimpleChanges,
   OnChanges,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import {
   AbstractControl,
@@ -57,6 +58,7 @@ const Controls = Object.freeze({
 @Component({
   selector: "tools-password-settings",
   templateUrl: "password-settings.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     SectionComponent,
     SectionHeaderComponent,

@@ -1,5 +1,5 @@
 import { DialogRef } from "@angular/cdk/dialog";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ChangePasswordComponent } from "@bitwarden/angular/auth/password-management/change-password";
 import { InputPasswordFlow } from "@bitwarden/auth/angular";
@@ -14,6 +14,7 @@ import { I18nPipe } from "@bitwarden/ui-common";
 @Component({
   selector: "app-change-password-dialog",
   templateUrl: "change-password-dialog.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DialogModule, ButtonModule, I18nPipe, ChangePasswordComponent],
 })
 export class ChangePasswordDialogComponent {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { isId, OrganizationId } from "@bitwarden/common/types/guid";
@@ -11,6 +11,7 @@ import { SharedModule } from "../../shared";
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "org-vault-export.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, ExportComponent, HeaderModule],
 })
 export class OrganizationVaultExportComponent implements OnInit {

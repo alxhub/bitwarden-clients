@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { Router, UrlSerializer, UrlTree } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
@@ -17,6 +17,7 @@ const flushPromises = async () => await new Promise(process.nextTick);
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   template: "",
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class EmptyComponent {}

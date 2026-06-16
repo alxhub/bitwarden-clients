@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { firstValueFrom, lastValueFrom, map, Observable, Subject, takeUntil } from "rxjs";
 
 import { AccountDeletionService } from "@bitwarden/angular/auth/account-deletion/account-deletion.service";
@@ -22,6 +22,7 @@ import { SetAccountVerifyDevicesDialogComponent } from "./set-account-verify-dev
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   templateUrl: "account.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     SharedModule,
     HeaderModule,

@@ -1,4 +1,12 @@
-import { Component, computed, DestroyRef, inject, input, OnInit } from "@angular/core";
+import {
+  Component,
+  computed,
+  DestroyRef,
+  inject,
+  input,
+  OnInit,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute } from "@angular/router";
 import { lastValueFrom } from "rxjs";
@@ -40,6 +48,7 @@ import { TrendWidgetComponent, TrendWidgetViewType } from "./trend-widget/trend-
     AccessIntelligenceCoachmarkComponent,
     TrendWidgetComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./all-activity.component.html",
 })
 export class AllActivityComponent implements OnInit {

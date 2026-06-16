@@ -1,4 +1,13 @@
-import { Component, computed, effect, ElementRef, inject, input, model } from "@angular/core";
+import {
+  Component,
+  computed,
+  effect,
+  ElementRef,
+  inject,
+  input,
+  model,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 
 import { AriaDisableDirective } from "../a11y";
 import { setA11yTitleAndAriaLabel } from "../a11y/set-a11y-title-and-aria-label";
@@ -38,6 +47,7 @@ type IconButtonSize = "default" | "xsmall" | "small" | "large";
     "[attr.bitIconButton]": "icon()",
     "[class]": "classList()",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   hostDirectives: [
     AriaDisableDirective,
     { directive: TooltipDirective, inputs: ["tooltipPosition"] },

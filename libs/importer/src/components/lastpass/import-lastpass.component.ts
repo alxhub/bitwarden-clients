@@ -1,7 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import {
   AsyncValidatorFn,
   ControlContainer,
@@ -30,6 +37,7 @@ import { LastPassDirectImportService } from "./lastpass-direct-import.service";
 @Component({
   selector: "import-lastpass",
   templateUrl: "import-lastpass.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     JslibModule,

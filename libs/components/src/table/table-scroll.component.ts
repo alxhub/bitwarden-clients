@@ -16,6 +16,7 @@ import {
   TrackByFunction,
   input,
   contentChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import { ScrollLayoutDirective } from "../layout";
@@ -50,6 +51,7 @@ export class BitRowDefDirective {
   selector: "bit-table-scroll",
   templateUrl: "./table-scroll.component.html",
   providers: [{ provide: TableComponent, useExisting: TableScrollComponent }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     CdkVirtualScrollViewport,

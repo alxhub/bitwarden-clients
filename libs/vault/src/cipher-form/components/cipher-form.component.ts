@@ -13,6 +13,7 @@ import {
   OnInit,
   Output,
   ViewChild,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
@@ -65,6 +66,7 @@ import { SshKeySectionComponent } from "./sshkey-section/sshkey-section.componen
       provide: CipherFormCacheService,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     AsyncActionsModule,
     TypographyModule,

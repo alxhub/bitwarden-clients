@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 
 import { RestrictedView } from "@bitwarden/assets/svg";
 import { ButtonModule, NoItemsModule } from "@bitwarden/components";
@@ -11,6 +11,7 @@ import { CollectionDialogTabType } from "../shared/components/collection-dialog"
 @Component({
   selector: "collection-access-restricted",
   imports: [SharedModule, ButtonModule, NoItemsModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<bit-no-items [icon]="icon" class="tw-mt-2 tw-block">
     <span slot="title" class="tw-mt-4 tw-block">{{ "youDoNotHavePermissions" | i18n }}</span>
     <button

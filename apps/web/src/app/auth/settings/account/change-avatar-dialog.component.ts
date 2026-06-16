@@ -8,6 +8,7 @@ import {
   OnInit,
   ViewChild,
   ViewEncapsulation,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { BehaviorSubject, debounceTime, firstValueFrom, Subject, takeUntil } from "rxjs";
 
@@ -39,6 +40,7 @@ type ChangeAvatarDialogData = {
 @Component({
   templateUrl: "change-avatar-dialog.component.html",
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SharedModule, SelectableAvatarComponent],
 })
 export class ChangeAvatarDialogComponent implements OnInit, OnDestroy {

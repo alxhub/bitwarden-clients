@@ -10,6 +10,7 @@ import {
   OnDestroy,
   OnInit,
   signal,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
@@ -139,6 +140,7 @@ type EmptyStateMap = Record<EmptyStateType, EmptyStateItem>;
     SearchModule,
     FormsModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: VaultItemsTransferService, useClass: DefaultVaultItemsTransferService },
     { provide: CipherFormConfigService, useClass: DefaultCipherFormConfigService },

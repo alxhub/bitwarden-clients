@@ -1,7 +1,15 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, ElementRef, Inject, OnDestroy, OnInit, viewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  Inject,
+  OnDestroy,
+  OnInit,
+  viewChild,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { Router } from "@angular/router";
 import { firstValueFrom, Observable, Subject, switchMap } from "rxjs";
@@ -134,6 +142,7 @@ export type VaultItemDialogResult = UnionOfValues<typeof VaultItemDialogResult>;
     PremiumBadgeComponent,
     I18nPipe,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [{ provide: ViewPasswordHistoryService, useClass: VaultViewPasswordHistoryService }],
 })
 export class VaultItemDialogComponent implements OnInit, OnDestroy {
